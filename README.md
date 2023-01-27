@@ -9,6 +9,13 @@ Ideas:
  - have a page for special dates... maybe like a vertical timeline with some pictures? dates can also link to photos from trips
  - use Canva to come up with the visuals and how I want it to look
 
+Pages
+ - Login page -- this is password protected
+ - Trips Together (has a list of all trips we've taken together -- when click on one, we go to Event/Trip page for that trip)
+ - Special Dates (vertical timeline with links to each Event/Trip page)
+ - Event/Trip Page -- has description and photo gallery for event/trip
+ - Business Ideas -- a link to our Google Drive?
+
 Important/special dates:
  - August 7, 2019 - first date
  - August 7, 2020 - officially dating
