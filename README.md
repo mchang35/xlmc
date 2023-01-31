@@ -12,6 +12,8 @@ Ideas:
 Pages
  - Login page -- this is password protected
  - Trips Together (has a list of all trips we've taken together -- when click on one, we go to Event/Trip page for that trip)
+   - can choose to have it in images format, list format, or MAP format!
+   - {embed a google map in website}(https://tribulant.com/blog/wordpress/easy-embedding-a-google-map-with-multiple-markers-to-your-site/)
  - Special Dates (vertical timeline with links to each Event/Trip page)
  - Event/Trip Page -- has description and photo gallery for event/trip
  - Business Ideas -- a link to our Google Drive?
