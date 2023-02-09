@@ -1,0 +1,119 @@
+{
+    "futuretrips": [
+        {
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "Colorado",
+                    "city": "Denver"
+                }
+            ],
+            "added_by": "Xue"
+        },
+        {
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "Texas",
+                    "city": "Austin"
+                }
+            ],
+            "added_by": "Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": null,
+                    "city": "National Parks"
+                }
+            ],
+            "added_by": "Xue and Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "Thailand",
+                    "state": null,
+                    "city": "Chiang Mai"
+                },
+                {
+                    "country": "Thailand",
+                    "state": null,
+                    "city": "Bangkok"
+                }
+            ],
+            "added_by": "Xue and Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "The Caribbean",
+                    "state": null,
+                    "city": null
+                }
+            ],
+            "added_by": "Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "The Maldives",
+                    "state": null,
+                    "city": null
+                }
+            ],
+            "added_by": "Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "France",
+                    "state": null,
+                    "city": "Paris"
+                },
+                {
+                    "country": "Italy",
+                    "state": null,
+                    "city": null
+                },
+                {
+                    "country": "Greece",
+                    "state": null,
+                    "city": null
+                },
+                {
+                    "country": "England",
+                    "state": null,
+                    "city": "London"
+                }
+            ],
+            "added_by": "Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "Iceland",
+                    "state": null,
+                    "city": null
+                }
+            ],
+            "added_by": "Mandy"
+        },
+        {
+            "locations": [
+                {
+                    "country": "Norway",
+                    "state": null,
+                    "city": null
+                },
+                {
+                    "country": "Sweden",
+                    "state": null,
+                    "city": null
+                }
+            ],
+            "added_by": "Mandy"
+        }
+    ]
+}
