@@ -1,0 +1,179 @@
+{
+    "dates": [
+        {
+            "date": {
+                "start": {
+                    "month": 8,
+                    "day": 7,
+                    "year": 2019
+                }
+            },
+            "description": "Xue and Mandy's first date @ Psycho Suzi's :)",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 8,
+                    "day": 7,
+                    "year": 2020
+                }
+            },
+            "description": "Xue and Mandy are officially dating!",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 11,
+                    "day": null,
+                    "year": 2015
+                }
+            },
+            "description": "Xue and Mandy meet for the first time at the 2015 Hmong New Year.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 7,
+                    "day": null,
+                    "year": 2019
+                }
+            },
+            "description": "Xue slides into Mandy's DMs (on Messenger).",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 10,
+                    "day": null,
+                    "year": 2019
+                }
+            },
+            "description": "Xue and Mandy dance together for the first time at the Chang New Year @ Unison.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 11,
+                    "day": 16,
+                    "year": 2019
+                }
+            },
+            "description": "Xue and Mandy share their first kiss at Mandy's grandma's 75th Grammy's birthday party @ Brothers Event Center!",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 3,
+                    "day": null,
+                    "year": 2020
+                }
+            },
+            "description": "Xue visits Mandy at school in Rhode Island.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 6,
+                    "day": null,
+                    "year": 2020
+                }
+            },
+            "description": "Xue joins Mandy and her family for a hike @ Taylors Falls and a movie @ the Vali-Hi Drive-In.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 12,
+                    "day": null,
+                    "year": 2020
+                }
+            },
+            "description": "Mandy spends her first Christmas with Xue's family.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 10,
+                    "day": null,
+                    "year": 2021
+                }
+            },
+            "description": "Xue visits Mandy at school in Rhode Island.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 5,
+                    "day": null,
+                    "year": 2022
+                }
+            },
+            "description": "Mandy and Xue graduate college!",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 6,
+                    "day": null,
+                    "year": 2022
+                }
+            },
+            "description": " Mandy and Xue go on their first road trip together from Providence, RI to Minneapolis, MN.",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 6,
+                    "day": null,
+                    "year": 2022
+                },
+                "end": {
+                    "month": 7,
+                    "day": null,
+                    "year": 2022
+                }
+            },
+            "description": " Mandy and Xue start their real official jobs!",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 12,
+                    "day": 2,
+                    "year": 2022
+                },
+                "end": {
+                    "month": 12,
+                    "day": 6,
+                    "year": 2022
+                }
+            },
+            "description": " Mandy and Xue go to Fort Lauderdale, FL together, as their first real vacation together!",
+            "photo": "placeholder.png"
+        },
+        {
+            "date": {
+                "start": {
+                    "month": 2,
+                    "day": 12,
+                    "year": 2023
+                }
+            },
+            "description": " Mandy and Xue go on their first house tour together in Woodbury.",
+            "photo": "placeholder.png"
+        },
+    ]
+}
