@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="loginQuestion()">
 
 <!-- <div class="topnav">
     <a class="active" href="index.html">HOME</a>
@@ -32,18 +32,21 @@
     </div>
 </div>
 
-<div class="center login">
+<div id="login-container" class="center login">
     <br><br><br>
     <div>
         <h1>Log In</h1>
         <br>
         <h3>Only Xue and Mandy are allowed!</h3>
         <br>
-        <div onload="loginQuestion()">
+        <p id="incorrect-answer-message" style="color:red;"></p>
+        <div class="loginQuestion">
             <p id="login-question"></p>
-            <!-- textbox for answer -->
+            <input type="text" id="login-answer" name="login-answer">
         </div>
+        <br><br>
         <button onclick="login()">Continue</button>
+        <br><br><br><br>
     </div>
 </div>
 

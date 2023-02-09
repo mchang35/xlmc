@@ -27,3 +27,7 @@ Important/special dates:
  - November 2022 - Mandy travels with Xue to Sacramento for the Dang Thao show
  - December 28, 2022 - January 1, 2023 - Mandy travels with Xue to Fresno for the final Dang Thao show
  - 
+
+Helpful resources:
+ - Asynchronous functions (fetch): https://dmitripavlutin.com/javascript-fetch-async-await/
+ - 
