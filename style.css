@@ -1,16 +1,24 @@
-.header {
-    background-image: url('placeholderImage.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+/* For ALL pages */
+
+body {
+    background-color: #f8f0de;
 }
 
-.vertically-horizontally-centered {
-    bottom: 0%;
-    margin-bottom: 0%;
+.overlay {
     position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.overlay-center {
+    position: absolute;
+    top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 33%;
+    transform:translate(-50%, -50%);
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+
 }
