@@ -9,14 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
 </head>
 
-<body onload="loginQuestion()">
-
-<!-- <div class="topnav">
-    <a class="active" href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="projects.html">PROJECTS</a>
-    <a href="contact.html">CONTACT</a>
-</div> -->
+<body onload="timeTogether()">
 
 <div class="h-100">
     <img class="w-100" src="placeholder.png">
@@ -27,26 +20,32 @@
         <h1>Xue Lor & Mandy Chang</h1>
         <br>
         <h2>Our Love Story and Adventures</h2>
+        <br>
+        <h4 id="elapsed"></h4>
+        <h3>Forever to go!</h3>
         <br><br>
-        <button onclick="scrollTo('login-container')">Log In</button>
+        <button onclick="scrollTo('ourtrips-container');">Continue to Our Trips --></button>
     </div>
 </div>
 
-<div id="login-container" class="center login">
+<div id="ourtrips-container" class="center">
     <br><br><br>
     <div>
-        <h1>Log In</h1>
-        <br>
-        <h3>Only Xue and Mandy are allowed!</h3>
-        <br>
-        <p id="incorrect-answer-message" style="color:red;"></p>
-        <div class="loginQuestion">
-            <p id="login-question"></p>
-            <input type="text" id="login-answer" name="login-answer">
-        </div>
-        <br><br>
-        <button onclick="login()">Continue</button>
-        <br><br><br><br>
+        <h1>Our Trips</h1>
+    </div>
+</div>
+
+<div id="tripstotake-container" class="center">
+    <br><br><br>
+    <div>
+        <h1>Trips We'd Like To Take</h1>
+    </div>
+</div>
+
+<div id="specialdates-container" class="center">
+    <br><br><br>
+    <div>
+        <h1>Trips We'd Like To Take</h1>
     </div>
 </div>
 
