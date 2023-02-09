@@ -1,12 +1,11 @@
 
-var questions;
-var q_num;
+var loginAnswer;
 
 async function openQuestions() {
     console.log("loading questions...")
     let res = await fetch('questions.json');
     data = await res.json();
-    questions = data.qs_and_as;
+    return data.qs_and_as;
 }
 
 function getRandomInt(max) {
@@ -15,27 +14,28 @@ function getRandomInt(max) {
 
 async function loginQuestion() {
     // on load for the div
-    await openQuestions();
+    let questions = await openQuestions();
     console.log("we are in loginQuestion");
     console.log(questions);
-    q_num = getRandomInt(questions.length);
+    let q_num = getRandomInt(questions.length);
     let loginQuestion = questions[q_num].question;
+    loginAnswer = questions[q_num].answer;
     console.log(loginQuestion);
 
     let p = document.getElementById("login-question");
     p.innerHTML = loginQuestion;
 }
 
-function scrollTo(divId) {
-    let loginDiv = document.getElementById(divId);
-    loginDiv.scrollIntoView();
+function scrollToDiv(divId) {
+    let div = document.getElementById(divId);
+    div.scrollIntoView();
 }
 
 function login() {
     console.log("We have clicked Log In");
     userAnswer = document.getElementById("login-answer").value;
     // if answer is correct
-    if (userAnswer.toLowerCase() == questions[q_num].answer.toLowerCase()) {
+    if (userAnswer.toLowerCase() == loginAnswer.toLowerCase()) {
         console.log("let's go to the next page");
         window.location.href = "home.html";
     } else { // if answer is not correct
