@@ -1,0 +1,16 @@
+.header {
+    background-image: url('placeholderImage.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.vertically-horizontally-centered {
+    bottom: 0%;
+    margin-bottom: 0%;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 33%;
+}
