@@ -1,5 +1,4 @@
 
-var start = true;
 var questions;
 var q_num;
 
@@ -7,11 +6,7 @@ async function openQuestions() {
     console.log("loading questions...")
     let res = await fetch('questions.json');
     data = await res.json();
-    console.log("initial data from json:")
-    console.log(data)
     questions = data.qs_and_as;
-    console.log("Qs and As:")
-    console.log(questions);
 }
 
 function getRandomInt(max) {
