@@ -1,11 +1,12 @@
 
 var loginAnswer;
 
-async function openQuestions() {
+// index
+async function openJSON(path) {
     console.log("loading questions...")
-    let res = await fetch('questions.json');
+    let res = await fetch(path);
     data = await res.json();
-    return data.qs_and_as;
+    return data;
 }
 
 function getRandomInt(max) {
@@ -14,7 +15,8 @@ function getRandomInt(max) {
 
 async function loginQuestion() {
     // on load for the div
-    let questions = await openQuestions();
+    let res = await openJSON('questions.json');
+    let questions = res.qs_and_as;
     console.log("we are in loginQuestion");
     console.log(questions);
     let q_num = getRandomInt(questions.length);
@@ -30,6 +32,8 @@ function scrollToDiv(divId) {
     let div = document.getElementById(divId);
     div.scrollIntoView();
 }
+
+// home
 
 function login() {
     console.log("We have clicked Log In");
@@ -99,3 +103,24 @@ function timeTogether() {
     let elapsedDiv = document.getElementById("elapsed");
     elapsedDiv.innerHTML = yrStr + dayStr + hrStr + minStr + sStr + " down..."
 }
+
+function loadAllHome() {
+    timeTogether();
+    layoutOurTrips();
+}
+
+// our trips
+
+async function layoutOurTrips() {
+    let container = document.getElementById("ourtrips-container");
+    let res = await openJSON('trips.json');
+    let trips = res.trips;
+    console.log("we are in layoutOurTrips");
+    console.log(trips);
+}
+
+// trips we'd like to take
+
+// special dates
+
+// business ideas
