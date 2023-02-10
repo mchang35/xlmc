@@ -211,9 +211,8 @@ function layoutTrip(trip, ind) {
 
 }
 
-
 async function layoutOurTrips() {
-    let container = document.getElementById("ourtrips-container");
+    let container = document.getElementById("ourtrips");
     let res = await openJSON('trips.json');
     let trips = res.trips;
     console.log("we are in layoutOurTrips");
@@ -246,6 +245,10 @@ async function layoutOurTrips() {
 
         ind = ind + 1;
     }
+}
+
+function goToAddTripForm() {
+    // go to the add trip form
 }
 
 // trips we'd like to take
