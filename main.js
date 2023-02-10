@@ -110,13 +110,104 @@ function loadAllHome() {
 }
 
 // our trips
+function makeDate(month, day, year) {
+    let monthStr = "";
+    switch (month) {
+        case 1:
+            monthStr = "January";
+            break;
+        case 2:
+            monthStr = "February";
+            break;
+        case 3:
+            monthStr = "March";
+            break;
+        case 4:
+            monthStr = "April";
+            break;
+        case 5:
+            monthStr = "May";
+            break;
+        case 6:
+            monthStr = "June";
+            break;
+        case 7:
+            monthStr = "July";
+            break;
+        case 8:
+            monthStr = "August";
+            break;
+        case 9:
+            monthStr = "September";
+            break;
+        case 10:
+            monthStr = "October";
+            break;
+        case 11:
+            monthStr = "November";
+            break;
+        case 12:
+            monthStr = "December";
+            break;
+    }
+    let return_str = monthStr;
+    if (day) {
+        return_str = return_str + " " + day.toString() + ",";
+    }
+    return_str = return_str + " " + year.toString();
+    return return_str;
+}
+
 function layoutTrip(trip, ind) {
     // create a div for the trip == make it a grid
-    // row
-        // col: photo
-    // row 
-        // col-2: button to modify
-        // col: title ("trip X: <title>") and dates as ps
+    let tripDiv = document.createElement("div");
+    tripDiv.classList.add("trip");
+    // row 1
+    let row1 = document.createElement("div");
+    row1.classList.add("row");
+    tripDiv.appendChild(row1);
+    // row 1 col: photo
+    let row1col = document.createElement("div");
+    row1col.classList.add("col");
+    row1.appendChild(row1col);
+    let photo = document.createElement("img");
+    // photo.classList.add("img-responsive");
+    photo.src = trip.primary_photo;
+    row1col.appendChild(photo);
+
+    // row 2
+    let row2 = document.createElement("div");
+    row2.classList.add("row");
+    tripDiv.appendChild(row2);
+    // row 2 col 1 -- col-3: button to modify
+    let row2col1 = document.createElement("div");
+    row2col1.classList.add("col-3");
+    row2.appendChild(row2col1);
+    let modifyButton = document.createElement("button");
+    modifyButton.innerHTML = "Modify Trip";
+    row2col1.appendChild(modifyButton);
+    // row 2 col 2: title ("trip X: <title>") and dates as ps
+    let row2col2 = document.createElement("div");
+    row2col2.classList.add("col-9");
+    row2.appendChild(row2col2);
+    let title = document.createElement("p");
+    title.style.textAlign = "right";
+    title.innerHTML = "Trip #" + (ind + 1).toString() + ": " + trip.name;
+    row2col2.appendChild(title);
+
+    let dates = document.createElement("p");
+    let startDate = trip.start_date;
+    let datesStr = makeDate(startDate.month, startDate.day, startDate.year);
+    let endDate = trip.end_date;
+    if (endDate) {
+        datesStr = datesStr + " - ";
+        datesStr = datesStr + makeDate(endDate.month, endDate.day, endDate.year);
+    }
+    dates.innerHTML = datesStr;
+    dates.style.textAlign = "right";
+    row2col2.appendChild(dates);
+
+    return tripDiv;
 
 }
 
@@ -131,20 +222,29 @@ async function layoutOurTrips() {
     let ind = 0;
     let row;
     let col;
-    let photo;
-    let title;
-    let dates;
 
     while (ind < trips.length) {
         let formatNum = ind % 6;
         if (formatNum == 0 || formatNum == 2 || formatNum == 3 || formatNum == 5) {
             row = document.createElement("div");
             row.classList.add("row");
+            container.appendChild(row);
         }
         col = document.createElement("div");
-        col.classList.add("col");
+        let colClass = "col";
+        if (formatNum == 0 || formatNum == 4) {
+            colClass = "col-8";
+        } else if (formatNum == 1 || formatNum == 3) {
+            colClass = "col-4";
+        }
+        col.classList.add(colClass);
+        row.appendChild(col);
 
+        let tripDiv = layoutTrip(trips[ind], ind);
 
+        col.appendChild(tripDiv);
+
+        ind = ind + 1;
     }
 }
 
