@@ -110,6 +110,16 @@ function loadAllHome() {
 }
 
 // our trips
+function layoutTrip(trip, ind) {
+    // create a div for the trip == make it a grid
+    // row
+        // col: photo
+    // row 
+        // col-2: button to modify
+        // col: title ("trip X: <title>") and dates as ps
+
+}
+
 
 async function layoutOurTrips() {
     let container = document.getElementById("ourtrips-container");
@@ -117,6 +127,25 @@ async function layoutOurTrips() {
     let trips = res.trips;
     console.log("we are in layoutOurTrips");
     console.log(trips);
+
+    let ind = 0;
+    let row;
+    let col;
+    let photo;
+    let title;
+    let dates;
+
+    while (ind < trips.length) {
+        let formatNum = ind % 6;
+        if (formatNum == 0 || formatNum == 2 || formatNum == 3 || formatNum == 5) {
+            row = document.createElement("div");
+            row.classList.add("row");
+        }
+        col = document.createElement("div");
+        col.classList.add("col");
+
+
+    }
 }
 
 // trips we'd like to take
