@@ -107,6 +107,7 @@ function timeTogether() {
 function loadAllHome() {
     timeTogether();
     layoutOurTrips();
+    layoutTripsToTake();
 }
 
 // our trips
@@ -215,8 +216,6 @@ async function layoutOurTrips() {
     let container = document.getElementById("ourtrips");
     let res = await openJSON('trips.json');
     let trips = res.trips;
-    console.log("we are in layoutOurTrips");
-    console.log(trips);
 
     let ind = 0;
     let row;
@@ -249,9 +248,66 @@ async function layoutOurTrips() {
 
 function goToAddTripForm() {
     // go to the add trip form
+    console.log("going to add trip form");
 }
 
 // trips we'd like to take
+function makeLocationString(location) {
+    let country = location.country;
+    let state = location.state;
+    let city = location.city;
+
+    let returnStr = city;
+    if (state) {
+        returnStr = returnStr + ", " + state;
+    }
+    if (country != "United States of America" && country) {
+        returnStr = returnStr + ", " + country;
+    }
+    
+    return returnStr;
+}
+
+async function layoutTripsToTake() {
+    let domesticUl = document.getElementById("tripstotake-domestic-ul");
+    let internationalUl = document.getElementById("tripstotakeinternational-ul");
+    let res = await openJSON('futuretrips.json');
+    let futureTrips = res.futuretrips;
+    
+    for (let i = 0; i < futureTrips.length; i++) {
+        let trip = futureTrips[i];
+        let locations = trip.locations;
+        let li = document.createElement("li");
+        let locStr = makeLocationString(locations[0]);
+
+        let domestic = true;
+
+        if (locations.length > 1) {
+            locStr = locStr + " and ";
+            if (locations[0].country != "United States of America") {
+                domestic = false;
+            }
+            for (let j = 1; j < locations.length; j++) {
+                let location = locations[j];
+                locStr = makeLocationString(location);
+                if (j + 2 < locations.length) {
+                    locStr = locStr + ", ";
+                }
+                if (j + 2 == locations.length) {
+                    locStr = locStr + ", and ";
+                }
+            }
+        }
+
+        li.innerHTML = locStr;
+        if (domestic) {
+            domesticUl.appendChild(li);
+        } else {
+            internationalUl.appendChild(li);
+        }
+    }
+    
+}
 
 // special dates
 

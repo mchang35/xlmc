@@ -72,6 +72,40 @@
                     "caption": "caption placeholder"
                 }
             ]
-        }
+        },
+        {
+            "name": "Dang Thao Tour: Final Two Shows",
+            "description": "Mandy tagged along with Xue to Sacramento, CA and Fresno, CA to watch him and his brothers play for Dang Thao.",
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "California",
+                    "city": "Sacramento"
+                },
+                {
+                    "country": "United States of America",
+                    "state": "California",
+                    "city": "Fresno"
+                }
+            ],
+            "start_date": {
+                "month": 11,
+                "day": null,
+                "year": 2022
+            },
+            "end_date": {
+                "month": 1,
+                "day": null,
+                "year": 2023
+            },
+            "added_by": "Mandy",
+            "primary_photo": "placeholder.png",
+            "photos": [
+                {
+                    "path": "placeholder.png",
+                    "caption": "caption placeholder"
+                }
+            ]
+        }   
     ]
 }
