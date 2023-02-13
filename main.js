@@ -49,7 +49,6 @@ function login() {
 }
 
 function elapsedX(int, elapsed) {
-    console.log("int: " + int)
     let conversions = [1000,60,60,24,365];
     let size = 1;
     let new_elapsed = elapsed;
@@ -76,7 +75,6 @@ function timeStr(num, unit) {
 }
 
 function timeTogether() {
-    console.log("time together is being calculated...");
     let today = new Date();
     let start = new Date('2020-08-07');
 
@@ -257,12 +255,32 @@ function makeLocationString(location) {
     let state = location.state;
     let city = location.city;
 
-    let returnStr = city;
-    if (state) {
-        returnStr = returnStr + ", " + state;
-    }
-    if (country != "United States of America" && country) {
-        returnStr = returnStr + ", " + country;
+    let returnStr = "";
+
+    if (country == "United States of America") {
+        returnStr = city;
+        if (state) {
+            returnStr = returnStr + ", " + state;
+        }
+    } else {
+        if (city) {
+            returnStr = city;
+            if (state) {
+                returnStr = returnStr + ", " + state;
+            }
+            if (country) {
+                returnStr = returnStr + ", " + country;
+            }
+        } else {
+            if (state) {
+                returnStr = state;
+                if (country) {
+                    returnStr = returnStr + " " + country;
+                }
+            } else {
+                returnStr = country;
+            }
+        }
     }
     
     return returnStr;
@@ -270,7 +288,7 @@ function makeLocationString(location) {
 
 async function layoutTripsToTake() {
     let domesticUl = document.getElementById("tripstotake-domestic-ul");
-    let internationalUl = document.getElementById("tripstotakeinternational-ul");
+    let internationalUl = document.getElementById("tripstotake-international-ul");
     let res = await openJSON('futuretrips.json');
     let futureTrips = res.futuretrips;
     
@@ -278,18 +296,26 @@ async function layoutTripsToTake() {
         let trip = futureTrips[i];
         let locations = trip.locations;
         let li = document.createElement("li");
+        li.style.textAlign = "left"; // find a way to do this in CSS?
         let locStr = makeLocationString(locations[0]);
 
         let domestic = true;
 
+        if (locations[0].country != "United States of America") {
+            domestic = false;
+        }
+
         if (locations.length > 1) {
-            locStr = locStr + " and ";
-            if (locations[0].country != "United States of America") {
-                domestic = false;
+            console.log("more than 1 location");
+            console.log(locations);
+            if (locations.length == 2) {
+                locStr = locStr + " and ";
+            } else {
+                locStr = locStr + ", ";
             }
             for (let j = 1; j < locations.length; j++) {
                 let location = locations[j];
-                locStr = makeLocationString(location);
+                locStr = locStr + makeLocationString(location);
                 if (j + 2 < locations.length) {
                     locStr = locStr + ", ";
                 }
@@ -310,5 +336,76 @@ async function layoutTripsToTake() {
 }
 
 // special dates
+(function(){
+    // Vertical Timeline - by CodyHouse.co
+      function VerticalTimeline( element ) {
+          this.element = element;
+          this.blocks = this.element.getElementsByClassName("cd-timeline__block");
+          this.images = this.element.getElementsByClassName("cd-timeline__img");
+          this.contents = this.element.getElementsByClassName("cd-timeline__content");
+          this.offset = 0.8;
+          this.hideBlocks();
+      };
+  
+      VerticalTimeline.prototype.hideBlocks = function() {
+          if ( !"classList" in document.documentElement ) {
+              return; // no animation on older browsers
+          }
+          //hide timeline blocks which are outside the viewport
+          var self = this;
+          for( var i = 0; i < this.blocks.length; i++) {
+              (function(i){
+                  if( self.blocks[i].getBoundingClientRect().top > window.innerHeight*self.offset ) {
+                      self.images[i].classList.add("cd-timeline__img--hidden"); 
+                      self.contents[i].classList.add("cd-timeline__content--hidden"); 
+                  }
+              })(i);
+          }
+      };
+  
+      VerticalTimeline.prototype.showBlocks = function() {
+          if ( ! "classList" in document.documentElement ) {
+              return;
+          }
+          var self = this;
+          for( var i = 0; i < this.blocks.length; i++) {
+              (function(i){
+                  if( self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
+                      // add bounce-in animation
+                      self.images[i].classList.add("cd-timeline__img--bounce-in");
+                      self.contents[i].classList.add("cd-timeline__content--bounce-in");
+                      self.images[i].classList.remove("cd-timeline__img--hidden");
+                      self.contents[i].classList.remove("cd-timeline__content--hidden");
+                  }
+              })(i);
+          }
+      };
+  
+      var verticalTimelines = document.getElementsByClassName("js-cd-timeline"),
+          verticalTimelinesArray = [],
+          scrolling = false;
+      if( verticalTimelines.length > 0 ) {
+          for( var i = 0; i < verticalTimelines.length; i++) {
+              (function(i){
+                  verticalTimelinesArray.push(new VerticalTimeline(verticalTimelines[i]));
+              })(i);
+          }
+  
+          //show timeline blocks on scrolling
+          window.addEventListener("scroll", function(event) {
+              if( !scrolling ) {
+                  scrolling = true;
+                  (!window.requestAnimationFrame) ? setTimeout(checkTimelineScroll, 250) : window.requestAnimationFrame(checkTimelineScroll);
+              }
+          });
+      }
+  
+      function checkTimelineScroll() {
+          verticalTimelinesArray.forEach(function(timeline){
+              timeline.showBlocks();
+          });
+          scrolling = false;
+      };
+  })();
 
 // business ideas

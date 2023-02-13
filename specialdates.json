@@ -37,7 +37,7 @@
             "date": {
                 "start": {
                     "month": 7,
-                    "day": null,
+                    "day": 28,
                     "year": 2019
                 }
             },
@@ -162,17 +162,6 @@
                 }
             },
             "description": " Mandy and Xue go to Fort Lauderdale, FL together, as their first real vacation together!",
-            "photo": "placeholder.png"
-        },
-        {
-            "date": {
-                "start": {
-                    "month": 2,
-                    "day": 12,
-                    "year": 2023
-                }
-            },
-            "description": " Mandy and Xue go on their first house tour together in Woodbury.",
             "photo": "placeholder.png"
         }
     ]
