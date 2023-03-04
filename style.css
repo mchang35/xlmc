@@ -1,6 +1,10 @@
 
 /* For ALL pages */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background-color: #f8f0de;
 }

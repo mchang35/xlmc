@@ -339,8 +339,12 @@ async function layoutTripsToTake() {
 }
 
 // Photo gallery
-function layoutPhotoGallery() {
+function loadPhotoGallery() {
 
+}
+
+function goTo(htmlPath) {
+    window.location.href = htmlPath;
 }
 
 // special dates
