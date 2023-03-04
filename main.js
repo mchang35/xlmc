@@ -106,6 +106,7 @@ function loadAllHome() {
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
+    layoutTimeline();
 }
 
 // our trips
@@ -336,76 +337,73 @@ async function layoutTripsToTake() {
 }
 
 // special dates
-(function(){
-    // Vertical Timeline - by CodyHouse.co
-      function VerticalTimeline( element ) {
-          this.element = element;
-          this.blocks = this.element.getElementsByClassName("cd-timeline__block");
-          this.images = this.element.getElementsByClassName("cd-timeline__img");
-          this.contents = this.element.getElementsByClassName("cd-timeline__content");
-          this.offset = 0.8;
-          this.hideBlocks();
-      };
-  
-      VerticalTimeline.prototype.hideBlocks = function() {
-          if ( !"classList" in document.documentElement ) {
-              return; // no animation on older browsers
-          }
-          //hide timeline blocks which are outside the viewport
-          var self = this;
-          for( var i = 0; i < this.blocks.length; i++) {
-              (function(i){
-                  if( self.blocks[i].getBoundingClientRect().top > window.innerHeight*self.offset ) {
-                      self.images[i].classList.add("cd-timeline__img--hidden"); 
-                      self.contents[i].classList.add("cd-timeline__content--hidden"); 
-                  }
-              })(i);
-          }
-      };
-  
-      VerticalTimeline.prototype.showBlocks = function() {
-          if ( ! "classList" in document.documentElement ) {
-              return;
-          }
-          var self = this;
-          for( var i = 0; i < this.blocks.length; i++) {
-              (function(i){
-                  if( self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
-                      // add bounce-in animation
-                      self.images[i].classList.add("cd-timeline__img--bounce-in");
-                      self.contents[i].classList.add("cd-timeline__content--bounce-in");
-                      self.images[i].classList.remove("cd-timeline__img--hidden");
-                      self.contents[i].classList.remove("cd-timeline__content--hidden");
-                  }
-              })(i);
-          }
-      };
-  
-      var verticalTimelines = document.getElementsByClassName("js-cd-timeline"),
-          verticalTimelinesArray = [],
-          scrolling = false;
-      if( verticalTimelines.length > 0 ) {
-          for( var i = 0; i < verticalTimelines.length; i++) {
-              (function(i){
-                  verticalTimelinesArray.push(new VerticalTimeline(verticalTimelines[i]));
-              })(i);
-          }
-  
-          //show timeline blocks on scrolling
-          window.addEventListener("scroll", function(event) {
-              if( !scrolling ) {
-                  scrolling = true;
-                  (!window.requestAnimationFrame) ? setTimeout(checkTimelineScroll, 250) : window.requestAnimationFrame(checkTimelineScroll);
-              }
-          });
-      }
-  
-      function checkTimelineScroll() {
-          verticalTimelinesArray.forEach(function(timeline){
-              timeline.showBlocks();
-          });
-          scrolling = false;
-      };
-  })();
+function appendDateInfoToCol(p, img, col) {
+    col.appendChild(p);
+    // col.appendChild(img);
+}
+
+function makeTimelineItem(timelineDiv, index, dateInfo) {
+    // create the row and col divs
+    let row = document.createElement("div");
+    row.classList.add("row");
+    let left = document.createElement("div");
+    left.classList.add("col","timeline-item-l");
+    let right = document.createElement("div");
+    right.classList.add("col","timeline-item-r");
+    row.appendChild(left);
+    row.appendChild(right);
+    timelineDiv.appendChild(row);
+
+    // setting up date-specific stuff
+    let text = document.createElement("p");
+    text.classList.add("timeline-text");
+    let dateSpan = document.createElement("span");
+    dateSpan.classList.add("timeline-date");
+    let photoDiv = document.createElement("img");
+
+
+    // get information from the dateInfo object
+    let start = dateInfo.date.start;
+    let startStr = makeDate(start.month, start.day, start.year);
+
+    let end;
+    let endStr;
+
+    if (dateInfo.date.end) {
+        end = dateInfo.date.end;
+        endStr = makeDate(end.month, end.day, end.year);
+    }
+
+    let fullDateStr = startStr;
+    if (endStr) {
+        fullDateStr = fullDateStr + " - " + endStr;
+    }
+
+    let desc = dateInfo.description;
+    let photo = dateInfo.photo;
+
+    // setting the element values
+    dateSpan.innerHTML = fullDateStr;
+    text.innerHTML = "<span class='timeline-date'>" + fullDateStr + "</span>:\n" + desc;
+    photoDiv.src = photo;
+
+    // set up the div on the left or right side according to index
+    if (index % 2 == 0) {
+        appendDateInfoToCol(text, photoDiv, left);
+    } else {
+        appendDateInfoToCol(text, photoDiv, right);
+    }
+}
+
+async function layoutTimeline() {
+    let res = await openJSON('specialdates.json');
+    let dates = res.dates;
+
+    let timelineDiv = document.getElementById("timeline");
+
+    for (let i = 0; i < dates.length; i++) {
+        makeTimelineItem(timelineDiv, i, dates[i]);
+    }
+}
 
 // business ideas
