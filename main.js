@@ -337,9 +337,8 @@ async function layoutTripsToTake() {
 }
 
 // special dates
-function appendDateInfoToCol(p, img, col) {
+function appendDateInfoToCol(p, col) {
     col.appendChild(p);
-    // col.appendChild(img);
 }
 
 function makeTimelineItem(timelineDiv, index, dateInfo) {
@@ -359,8 +358,6 @@ function makeTimelineItem(timelineDiv, index, dateInfo) {
     text.classList.add("timeline-text");
     let dateSpan = document.createElement("span");
     dateSpan.classList.add("timeline-date");
-    let photoDiv = document.createElement("img");
-
 
     // get information from the dateInfo object
     let start = dateInfo.date.start;
@@ -380,18 +377,16 @@ function makeTimelineItem(timelineDiv, index, dateInfo) {
     }
 
     let desc = dateInfo.description;
-    let photo = dateInfo.photo;
 
     // setting the element values
     dateSpan.innerHTML = fullDateStr;
     text.innerHTML = "<span class='timeline-date'>" + fullDateStr + "</span>:\n" + desc;
-    photoDiv.src = photo;
 
     // set up the div on the left or right side according to index
     if (index % 2 == 0) {
-        appendDateInfoToCol(text, photoDiv, left);
+        appendDateInfoToCol(text, left);
     } else {
-        appendDateInfoToCol(text, photoDiv, right);
+        appendDateInfoToCol(text, right);
     }
 }
 

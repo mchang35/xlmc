@@ -24,12 +24,30 @@ body {
     text-align: center;
 }
 
+.multipleButtonsDiv {
+  padding:5px;
+}
+
 button {
 
 }
 
 button:hover {
     
+}
+
+.navbar {
+  padding: 10px;
+  background-color: #cf6d48;
+  color: white;
+}
+
+.navbar-link:hover {
+  cursor:pointer;
+}
+
+.navbar-link {
+  color: white;
 }
 
 .trip {
