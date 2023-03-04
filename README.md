@@ -34,4 +34,5 @@ Helpful resources:
  - Asynchronous functions (fetch): https://dmitripavlutin.com/javascript-fetch-async-await/
  - Responsive Vertical timeline: https://codyhouse.co/gem/vertical-timeline/
  - Responsive Vertical timeline (W3Schools): https://www.w3schools.com/howto/howto_css_timeline.asp
+ - Making any element sticky: https://www.w3schools.com/howto/howto_css_sticky_element.asp
  
