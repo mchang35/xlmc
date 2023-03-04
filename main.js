@@ -1,5 +1,7 @@
 
 var loginAnswer;
+var navbarOrigPos;
+var firstScroll = true;
 
 // index
 async function openJSON(path) {
