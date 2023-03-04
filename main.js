@@ -338,6 +338,11 @@ async function layoutTripsToTake() {
     
 }
 
+// Photo gallery
+function layoutPhotoGallery() {
+
+}
+
 // special dates
 function appendDateInfoToCol(p, col) {
     col.appendChild(p);
@@ -402,5 +407,3 @@ async function layoutTimeline() {
         makeTimelineItem(timelineDiv, i, dates[i]);
     }
 }
-
-// business ideas
