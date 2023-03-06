@@ -24,6 +24,7 @@ Still need to do:
  - Make photo gallery page
     - when you click on an individual photo, you can see it larger (in a popup?) and go to the next/previous photo and see a caption for the photo
  - make individual event/trip page
+ - get the order of the dates
  - add interactivity for users to:
     - add photos to photo gallery
     - add events/dates to timeline

@@ -348,6 +348,12 @@ function goTo(htmlPath) {
 }
 
 // special dates
+function sortDates(dates) {
+    let sortedDates = [];
+    
+    // should return an array of sorted date objects
+}
+
 function appendDateInfoToCol(p, col) {
     col.appendChild(p);
 }
