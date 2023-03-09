@@ -21,7 +21,10 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": "Photos/placeholder.png",
+            "primary_photo": {
+                "path": "Photos/placeholder.png",
+                "caption": "caption placeholder"
+            },
             "photos": [
                 {
                     "path": "Photos/placeholder.png",
@@ -65,7 +68,10 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": "Photos/placeholder.png",
+            "primary_photo": {
+                "path": "Photos/placeholder.png",
+                "caption":"caption placeholder"
+            },
             "photos": [
                 {
                     "path": "Photos/placeholder.png",
@@ -99,7 +105,10 @@
                 "year": 2023
             },
             "added_by": "Mandy",
-            "primary_photo": "Photos/placeholder.png",
+            "primary_photo": {
+                "path": "Photos/placeholder.png",
+                "caption":"caption placeholder"
+            },
             "photos": [
                 {
                     "path": "Photos/placeholder.png",

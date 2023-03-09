@@ -432,3 +432,8 @@ async function layoutTimeline() {
 function goToEditTimeline() {
     // go to a new page
 }
+
+// photo gallery PAGE
+function goToAddPhotos() {
+    
+}
