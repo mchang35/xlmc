@@ -108,6 +108,7 @@ function loadAllHome() {
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
+    loadPhotoGallery();
     layoutTimeline();
 }
 
@@ -340,7 +341,17 @@ async function layoutTripsToTake() {
 
 // Photo gallery
 function loadPhotoGallery() {
+    let photoGallery = document.getElementById("photogallery");
 
+    // open Photos directory and put all paths into a list
+    let fs = require('fs');
+    let photoPaths = fs.readdirSync('Photos/');
+
+    console.log("Photo paths");
+    console.log(photoPaths);
+
+    // for each photo: create img item, with src as the path
+    // add img item to the photogallery div
 }
 
 function goTo(htmlPath) {
@@ -416,4 +427,8 @@ async function layoutTimeline() {
     for (let i = 0; i < dates.length; i++) {
         makeTimelineItem(timelineDiv, i, dates[i]);
     }
+}
+
+function goToEditTimeline() {
+    // go to a new page
 }

@@ -40,6 +40,7 @@ button:hover {
     
 }
 
+/* navigation bar */
 .navbar {
   padding: 10px;
   background-color: #cf6d48;
@@ -58,6 +59,7 @@ button:hover {
   color: white;
 }
 
+/* Trips */
 .trip {
     margin: 25px;
 }
@@ -77,6 +79,20 @@ button:hover {
 
 .tripstotake-ul li {
     text-align: left;
+}
+
+/* Photo gallery */
+#photogallery {
+  display: table;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#photogallery img {
+  object-fit: cover;
+  width: 200px;
+  height:200px;
+  padding: 10px;
 }
 
 /* for the timeline */
