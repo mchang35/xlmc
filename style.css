@@ -27,14 +27,24 @@ h1 {
   font-family: migra;
 }
 
+.section-title {
+  margin-left: 5%;
+}
+
 .center {
     text-align: center;
+}
+
+.header {
+  background: linear-gradient(0deg, #696863, #696863), url('Photos/placeholder.png');
+  min-height: 100%;
 }
 
 .overlay {
     position: absolute;
     top: 0%;
     left: 0%;
+    color: #f8f0de;
 }
 
 .overlay-center {
@@ -44,10 +54,11 @@ h1 {
     transform:translate(-50%, -50%);
     font-weight: bold;
     text-align: center;
+    color: #f8f0de;
 }
 
 .multipleButtonsDiv {
-  padding:5px;
+  margin-top: 0;
 }
 
 .cream-button {
@@ -113,6 +124,11 @@ button:hover {
 
 .trip button {
     margin: 10px;
+}
+
+.trip p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .tripstotake-container {

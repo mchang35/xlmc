@@ -11,12 +11,13 @@
 
 <body onload="loadAllHome();">
 
-<div class="h-100">
-    <img class="w-100" src="Photos/placeholder.png">
+<div class="h-100 header">
+    <img class="w-100" style="opacity: 50%;" src="Photos/placeholder.png">
     <div class="overlay">
         <h1 style="margin: 15%;">XLMC</h1>
     </div>
     <div class="overlay-center h-100">
+        <br><br><br>
         <h1>Welcome!</h1>
         <br>
         <h1>Xue Lor & Mandy Chang</h1>
@@ -25,19 +26,18 @@
         <br>
         <h4 id="elapsed"></h4>
         <h3>Forever to go!</h3>
-        <br><br>
+        <br>
         <button class="cream-button" onclick="scrollToDiv('ourtrips-container');">Continue to Our Trips --></button>
-        <br><br>
+        <br>
         <p>OR jump to:</p>
         <div class="multipleButtonsDiv">
-          <button class="orange-transparent-button" onClick="scrollToDiv('tripstotake-container');">Trips to Take</button>
-          <button class="orange-transparent-button" onClick="scrollToDiv('businessideas-container');">Business Ideas and Shared Content</button>
-          <button class="orange-transparent-button" onClick="scrollToDiv('photogallery-container');">Photo Gallery</button>
-          <button class="orange-transparent-button" onclick="scrollToDiv('specialdates-container');">Special Dates</button>
+          <button class="cream-button" onClick="scrollToDiv('tripstotake-container');">Trips to Take</button>
+          <button class="cream-button" onClick="scrollToDiv('businessideas-container');">Business Ideas and Shared Content</button>
+          <button class="cream-button" onClick="scrollToDiv('photogallery-container');">Photo Gallery</button>
+          <button class="cream-button" onclick="scrollToDiv('specialdates-container');">Special Dates</button>
         </div>
-        
-        <br><br>
-        <button class="orange-transparent-button" onClick="window.location.href='index.html';">Log Out</button>
+        <br>
+        <button class="cream-button" onClick="window.location.href='index.html';">Log Out</button>
     </div>
 </div>
 
@@ -49,91 +49,99 @@
   <a class="navbar-link" onClick="scrollToDiv('specialdates-container');">Special Dates</a>
 </div>
 
-<div id="ourtrips-container" class="center">
+<div id="ourtrips-container">
     <br><br><br>
-    <h1>Our Trips</h1>
-    <div id="ourtrips"></div>
-    <button class="orange-solid-button" onclick="goToAddTripForm();">+ Add a Trip</button>
+    <h1 class="section-title">Our Trips</h1>
+    <div class="center">
+      <div id="ourtrips" class="center"></div>
+      <button class="orange-solid-button" onclick="goToAddTripForm();">+ Add a Trip</button>
+    </div>
 </div>
 
-<div id="tripstotake-container" class="center">
+<div id="tripstotake-container">
     <br><br><br>
-    <h1>Trips We'd Like To Take</h1>
+    <h1 class="section-title">Trips We'd Like To Take</h1>
     <br>
-    <div>
+    <div class="section-title">
         <h2>Domestic</h2>
         <ul id="tripstotake-domestic-ul" class="tripstotake-ul"></ul>
         <h2>International</h2>
         <ul id="tripstotake-international-ul" class="tripstotake-ul"></ul>
     </div>
-    <button class="orange-solid-button" onclick="goToAddTripForm();">+/- Edit This List</button>
+    <div class="center">
+      <button class="orange-solid-button" onclick="goToAddTripForm();">+/- Edit This List</button>
+    </div>
 </div>
 
-<div id="businessideas-container" class="center">
+<div id="businessideas-container">
   <br><br><br>
-  <h1>Business Ideas and Shared Content</h1>
-  <a href="https://drive.google.com/drive/folders/1S2YX8b6Jf4w1S1CTM0iLa-9-9m5CzjHA?usp=share_link">Click HERE to visit our Google Drive folder!</a>
-  <p>For now, feel free to browse and view the current contents of this folder:</p>
-  <iframe class="center" src="https://drive.google.com/embeddedfolderview?id=1S2YX8b6Jf4w1S1CTM0iLa-9-9m5CzjHA#grid" style="width:100%; height:600px; border:0;"></iframe>
-</div>
-
-<div id="photogallery-container" class="center">
-  <br><br><br>
-  <h1>Photo Gallery</h1>
-  <br><br>
-  <!-- have scrollable pictures-->
-  <div id="photogallery">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
-    <img src='Photos/placeholder.png'>
-    <img src="Photos/placeholderImage.png">
+  <h1 class="section-title">Business Ideas and Shared Content</h1>
+  <div class="center">
+    <a href="https://drive.google.com/drive/folders/1S2YX8b6Jf4w1S1CTM0iLa-9-9m5CzjHA?usp=share_link">Click HERE to visit our Google Drive folder!</a>
+    <p>For now, feel free to browse and view the current contents of this folder:</p>
+    <iframe class="center" src="https://drive.google.com/embeddedfolderview?id=1S2YX8b6Jf4w1S1CTM0iLa-9-9m5CzjHA#grid" style="width:100%; height:600px; border:0;"></iframe>
   </div>
-  <br><br>
-  <button class="orange-solid-button" onclick="goTo('photoGallery.html');">View full photo gallery page</button>
 </div>
 
-<div id="specialdates-container" class="center">
+<div id="photogallery-container">
+  <br><br><br>
+  <h1 class="section-title">Photo Gallery</h1>
+  <br><br>
+  <div class="center">
+    <!-- have scrollable pictures-->
+    <div id="photogallery">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+      <img src='Photos/placeholder.png'>
+      <img src="Photos/placeholderImage.png">
+    </div>
+    <br><br>
+    <button class="orange-solid-button" onclick="goTo('photoGallery.html');">View full photo gallery page</button>
+  </div>
+</div>
+
+<div id="specialdates-container">
     <br><br><br>
-    <div>
-      <h1>Special Dates</h1>
-      <br>
+    <h1 class="section-title">Special Dates</h1>
+    <br>
+    <div class="center">
       <div id="timeline" class="w-75 div-center">
       </div>
       <br>
+      <button class="orange-solid-button" onclick="goToEditTimeline();">+/- Edit the Timeline</button>
     </div>
-    <button class="orange-solid-button" onclick="goToEditTimeline();">+/- Edit the Timeline</button>
     <br><br><br>
 </div>
 
