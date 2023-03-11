@@ -30,6 +30,13 @@ Still need to do:
     - add locations to wishlist
     - add trips we've been on
     - NOT SURE IF THIS INTERACTIVITY IS POSSIBLE SINCE WE ARE UNABLE TO ACCESS THE FILE SYSTEM WITHOUT NODE.JS
+ - titles font (from Google fonts): 
+    - Bebas Neue
+    - Titan One
+    - Gloock
+    - Ultra
+    - Yeseva One -- CLOSEST ONE 
+    - DM Serif Text
 
 Questions and notes:
  - PHOTO GALLERY PAGE:

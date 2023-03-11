@@ -16,7 +16,7 @@
     <div class="overlay">
         <h1 style="margin: 15%;">XLMC</h1>
     </div>
-    <div class="overlay-center">
+    <div class="overlay-center h-100">
         <h1>Welcome!</h1>
         <br>
         <h1>Xue Lor & Mandy Chang</h1>
@@ -30,14 +30,14 @@
         <br><br>
         <p>OR jump to:</p>
         <div class="multipleButtonsDiv">
-          <button onClick="scrollToDiv('tripstotake-container');">Trips to Take</button>
-          <button onClick="scrollToDiv('businessideas-container');">Business Ideas and Shared Content</button>
-          <button onClick="scrollToDiv('photogallery-container');">Photo Gallery</button>
-          <button onclick="scrollToDiv('specialdates-container');">Special Dates</button>
+          <button class="orange-transparent-button" onClick="scrollToDiv('tripstotake-container');">Trips to Take</button>
+          <button class="orange-transparent-button" onClick="scrollToDiv('businessideas-container');">Business Ideas and Shared Content</button>
+          <button class="orange-transparent-button" onClick="scrollToDiv('photogallery-container');">Photo Gallery</button>
+          <button class="orange-transparent-button" onclick="scrollToDiv('specialdates-container');">Special Dates</button>
         </div>
         
         <br><br>
-        <button onClick="window.location.href='index.html';">Log Out</button>
+        <button class="orange-transparent-button" onClick="window.location.href='index.html';">Log Out</button>
     </div>
 </div>
 
@@ -53,7 +53,7 @@
     <br><br><br>
     <h1>Our Trips</h1>
     <div id="ourtrips"></div>
-    <button onclick="goToAddTripForm();">+ Add a Trip</button>
+    <button class="orange-solid-button" onclick="goToAddTripForm();">+ Add a Trip</button>
 </div>
 
 <div id="tripstotake-container" class="center">
@@ -66,7 +66,7 @@
         <h2>International</h2>
         <ul id="tripstotake-international-ul" class="tripstotake-ul"></ul>
     </div>
-    <button onclick="goToAddTripForm();">+/- Edit This List</button>
+    <button class="orange-solid-button" onclick="goToAddTripForm();">+/- Edit This List</button>
 </div>
 
 <div id="businessideas-container" class="center">
@@ -121,7 +121,7 @@
     <img src="Photos/placeholderImage.png">
   </div>
   <br><br>
-  <button onclick="goTo('photoGallery.html');">View full photo gallery page</button>
+  <button class="orange-solid-button" onclick="goTo('photoGallery.html');">View full photo gallery page</button>
 </div>
 
 <div id="specialdates-container" class="center">
@@ -133,7 +133,7 @@
       </div>
       <br>
     </div>
-    <button onclick="goToEditTimeline();">+/- Edit the Timeline</button>
+    <button class="orange-solid-button" onclick="goToEditTimeline();">+/- Edit the Timeline</button>
     <br><br><br>
 </div>
 

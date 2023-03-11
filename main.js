@@ -187,6 +187,7 @@ function layoutTrip(trip, ind) {
     row2col1.classList.add("col-3");
     row2.appendChild(row2col1);
     let modifyButton = document.createElement("button");
+    modifyButton.classList.add("orange-transparent-button");
     modifyButton.innerHTML = "Modify Trip";
     row2col1.appendChild(modifyButton);
     // row 2 col 2: title ("trip X: <title>") and dates as ps
@@ -338,6 +339,7 @@ async function layoutTripsToTake() {
 }
 
 // Photo gallery
+// this function isn't finished yet vv
 function loadPhotoGallery() {
     let photoGallery = document.getElementById("photogallery");
 

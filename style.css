@@ -4,12 +4,27 @@ orange-ish color: #cf6d48
 
 /* For ALL pages */
 
+@font-face {
+  font-family: dm-sans;
+  src: url('DM_Sans/DMSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: migra;
+  src: url('Migra/Migra-Extrabold.ttf');
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
     background-color: #f8f0de;
+    font-family: dm-sans;
+}
+
+h1 {
+  font-family: migra;
 }
 
 .center {
@@ -37,19 +52,33 @@ body {
 
 .cream-button {
   border-color: #f8f0de;
-  border-style: solid;
   color: #f8f0de;
-  padding: 6px;
   background-color: transparent;
-  text-align: center;
+}
+
+.orange-transparent-button {
+  border-color: #cf6d48;
+  color: black;
+  background-color: transparent;
+}
+
+.orange-solid-button {
+  border-color: #cf6d48;
+  color: black;
+  background-color: #cf6d48;
 }
 
 button {
-
+  border-style: solid;
+  padding: 6px;
+  text-align: center;
+  margin: 5px;
+  box-sizing: border-box;
 }
 
 button:hover {
-    
+  border-color: pink;
+  color: pink;
 }
 
 /* navigation bar */
@@ -65,6 +94,7 @@ button:hover {
 
 .navbar-link:hover {
   cursor:pointer;
+  color: pink;
 }
 
 .navbar-link {
