@@ -21,15 +21,10 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": {
-                "path": "Photos/placeholder.png",
-                "caption": "caption placeholder"
-            },
+            "primary_photo": "Photos/placeholder.png",
             "photos": [
-                {
-                    "path": "Photos/placeholder.png",
-                    "caption": "caption placeholder"
-                }
+                "Photos/placeholder.png",
+                "Photos/placeholderImage.png"
             ]
         },
         {
@@ -68,15 +63,10 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": {
-                "path": "Photos/placeholder.png",
-                "caption":"caption placeholder"
-            },
+            "primary_photo": "Photos/placeholder.png",
             "photos": [
-                {
-                    "path": "Photos/placeholder.png",
-                    "caption": "caption placeholder"
-                }
+                "Photos/placeholder.png",
+                "Photos/placeholderImage.png"
             ]
         },
         {
@@ -105,15 +95,10 @@
                 "year": 2023
             },
             "added_by": "Mandy",
-            "primary_photo": {
-                "path": "Photos/placeholder.png",
-                "caption":"caption placeholder"
-            },
+            "primary_photo": "Photos/placeholder.png",
             "photos": [
-                {
-                    "path": "Photos/placeholder.png",
-                    "caption": "caption placeholder"
-                }
+                "Photos/placeholder.png",
+                "Photos/placeholderImage.png"
             ]
         }   
     ]

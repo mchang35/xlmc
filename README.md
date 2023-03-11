@@ -29,6 +29,7 @@ Still need to do:
     - add events/dates to timeline
     - add locations to wishlist
     - add trips we've been on
+    - NOT SURE IF THIS INTERACTIVITY IS POSSIBLE SINCE WE ARE UNABLE TO ACCESS THE FILE SYSTEM WITHOUT NODE.JS
 
 Questions and notes:
  - PHOTO GALLERY PAGE:

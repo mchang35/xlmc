@@ -108,7 +108,7 @@ function loadAllHome() {
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
-    loadPhotoGallery();
+    // loadPhotoGallery();
     layoutTimeline();
 }
 
@@ -310,8 +310,6 @@ async function layoutTripsToTake() {
         }
 
         if (locations.length > 1) {
-            console.log("more than 1 location");
-            console.log(locations);
             if (locations.length == 2) {
                 locStr = locStr + " and ";
             } else {

@@ -1,3 +1,6 @@
+/* cream color: #f8f0de
+orange-ish color: #cf6d48
+*/
 
 /* For ALL pages */
 
@@ -30,6 +33,15 @@ body {
 
 .multipleButtonsDiv {
   padding:5px;
+}
+
+.cream-button {
+  border-color: #f8f0de;
+  border-style: solid;
+  color: #f8f0de;
+  padding: 6px;
+  background-color: transparent;
+  text-align: center;
 }
 
 button {
@@ -86,6 +98,8 @@ button:hover {
   display: table;
   margin-left: 100px;
   margin-right: 100px;
+  max-height: 200px;
+  overflow: scroll;
 }
 
 #photogallery img {
@@ -93,6 +107,10 @@ button:hover {
   width: 200px;
   height:200px;
   padding: 10px;
+}
+
+#photogallery img:hover {
+  cursor:pointer;
 }
 
 /* for the timeline */
