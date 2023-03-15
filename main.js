@@ -354,6 +354,32 @@ function loadPhotoGallery() {
     // add img item to the photogallery div
 }
 
+function selectPhoto(path) {
+    console.log("a photo has been selected");
+
+    // open the selected-photo-overlay
+    let overlay = document.getElementById("photo-gallery-modal");
+    overlay.style.display = "block";
+
+    let selectedPhotoImg = document.getElementById("selected-photo");
+    selectedPhotoImg.src = path;
+
+    let captionP = document.getElementById("selected-photo-caption");
+    // set innerHTML for captionP
+}
+
+function previousPhoto() {
+
+}
+
+function nextPhoto() {
+
+}
+
+function closeSelectedPhoto() {
+    document.getElementById("photo-gallery-modal").style.display = "none";
+}
+
 function goTo(htmlPath) {
     window.location.href = htmlPath;
 }
