@@ -163,9 +163,7 @@ button:hover {
   border-color: pink;
 }
 
-/* .invisible {
-  visibility: hidden;
-} */
+/* for the selected photo pop-up */
 
 .close {
   color: #aaaaaa;
@@ -195,7 +193,6 @@ button:hover {
 }
 
 .selected-photo-overlay {
-  /* position: fixed; */
   margin: 20% auto;
   border-color: #cf6d48;
   border-style: solid;
@@ -207,8 +204,16 @@ button:hover {
   z-index: 1;
 }
 
+.selected-photo-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 40px;
+  top: 50%;
+}
+
 #selected-photo {
   max-width: 90%;
+  margin-top: 10px;
 }
 
 /* for the timeline */

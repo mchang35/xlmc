@@ -344,19 +344,17 @@ function loadPhotoGallery() {
     let photoGallery = document.getElementById("photogallery");
 
     // open Photos directory and put all paths into a list
-    let fs = require('fs');
-    let photoPaths = fs.readdirSync('Photos/');
+    // let fs = require('fs');
+    // let photoPaths = fs.readdirSync('Photos/');
 
-    console.log("Photo paths");
-    console.log(photoPaths);
+    // console.log("Photo paths");
+    // console.log(photoPaths);
 
     // for each photo: create img item, with src as the path
     // add img item to the photogallery div
 }
 
 function selectPhoto(path) {
-    console.log("a photo has been selected");
-
     // open the selected-photo-overlay
     let overlay = document.getElementById("photo-gallery-modal");
     overlay.style.display = "block";
@@ -380,8 +378,12 @@ function closeSelectedPhoto() {
     document.getElementById("photo-gallery-modal").style.display = "none";
 }
 
-function goTo(htmlPath) {
+function goTo(htmlPath, divContainer=null) {
     window.location.href = htmlPath;
+
+    if (divContainer) {
+        scrollToDiv(divContainer);
+    }
 }
 
 // special dates

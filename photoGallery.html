@@ -11,42 +11,83 @@
 
 <body onload="loadPhotoGallery()">
 
+<!-- Fix these onClicks -->
 <div id="navbar" class="navbar">
-    <a class="navbar-link" onClick="scrollToDiv('ourtrips-container');">Our Trips</a>
+    <a class="navbar-link" onClick="goTo('home.html', 'ourtrips-container');">Our Trips</a>
     <a class="navbar-link" onClick="scrollToDiv('tripstotake-container');">Trips to Take</a>
     <a class="navbar-link" onClick="scrollToDiv('businessideas-container');">Business Ideas and Shared Content</a>
     <a class="navbar-link" onClick="scrollToDiv('photogallery-container');">Photo Gallery</a>
     <a class="navbar-link" onClick="scrollToDiv('specialdates-container');">Special Dates</a>
 </div>
 
-<button style="margin:10px;" onclick="goTo('home.html');">Back to Home Page</button>
+<button style="margin:10px;" class="orange-transparent-button" onclick="goTo('home.html');">Back to Home Page</button>
 
 <div id="gallery" class="gallery center">
     <h1>Photo Gallery</h1>
     <br><br>
     <div id="photogallery">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
-        <img src='Photos/placeholder.png'>
-        <img src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
+        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
+        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
     </div>
-    <br><br>
-    <button onclick="goToAddPhotos();">+ Add photos</button>
+
+    <div id="photo-gallery-modal" class="photo-gallery-modal">
+        <div id="selected-photo-overlay" class="selected-photo-overlay center">
+          <span onclick="closeSelectedPhoto();" class="close">&times;</span>
+          <div class="row">
+            <div class="col selected-photo-button">
+              <button class="orange-transparent-button" onclick="previousPhoto();">&#8249;</button>
+            </div>
+            <div class="col-8">
+              <img id="selected-photo" src="Photos/placeholder.png">
+            </div>
+            <div class="col selected-photo-button">
+              <button class="orange-transparent-button" onclick="nextPhoto();">&#8250;</button>
+            </div>
+          </div>
+          <p id="selected-photo-caption" class="selected-photo-caption"></p>
+          <button class="orange-transparent-button" onclick="closeSelectedPhoto();">Close</button>
+        </div>
+      </div>
+    <br>
+    <button class="orange-solid-button" onclick="goToAddPhotos();">+ Add photos</button>
+    <br><br><br>
 </div>
+
+<p style="text-align:center">This website was created by Mandy Chang as a (late) Valentine's Day gift for Xue Lor in 2023. I love you!</p>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
