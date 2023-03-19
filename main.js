@@ -1,7 +1,8 @@
 
 var loginAnswer;
-var navbarOrigPos;
-var firstScroll = true;
+var TRIPS = {};
+var PHOTOS = {};
+var PHOTO_DIR = "Photos/"
 
 // index
 async function openJSON(path) {
@@ -104,12 +105,17 @@ function timeTogether() {
     elapsedDiv.innerHTML = yrStr + dayStr + hrStr + minStr + sStr + " down..."
 }
 
-function loadAllHome() {
+async function loadAllHome(goToDiv=null) {
+    TRIPS = await openJSON('trips.json');
+    PHOTOS = await openJSON('photos.json');
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
-    // loadPhotoGallery();
     layoutTimeline();
+
+    if (goToDiv) {
+        scrollToDiv(goToDiv);
+    }
 }
 
 // our trips
@@ -161,6 +167,16 @@ function makeDate(month, day, year) {
     return return_str;
 }
 
+function startEndDates(start, end) {
+    let datesStr = makeDate(start.month, start.day, start.year);
+    if (end) {
+        datesStr = datesStr + " - ";
+        datesStr = datesStr + makeDate(end.month, end.day, end.year);
+    }
+
+    return datesStr;
+}
+
 function layoutTrip(trip, ind) {
     // create a div for the trip == make it a grid
     let tripDiv = document.createElement("div");
@@ -174,8 +190,8 @@ function layoutTrip(trip, ind) {
     row1col.classList.add("col");
     row1.appendChild(row1col);
     let photo = document.createElement("img");
-    // photo.classList.add("img-responsive");
-    photo.src = trip.primary_photo;
+    photo.onclick = function() {clickTrip(trip.name)};
+    photo.src = PHOTO_DIR + trip.primary_photo;
     row1col.appendChild(photo);
 
     // row 2
@@ -195,19 +211,14 @@ function layoutTrip(trip, ind) {
     row2col2.classList.add("col-9");
     row2.appendChild(row2col2);
     let title = document.createElement("p");
+    title.setAttribute('id','title');
     title.style.textAlign = "right";
     title.innerHTML = "Trip #" + (ind + 1).toString() + ": " + trip.name;
+    title.onclick = function() {clickTrip(trip.name)};
     row2col2.appendChild(title);
 
     let dates = document.createElement("p");
-    let startDate = trip.start_date;
-    let datesStr = makeDate(startDate.month, startDate.day, startDate.year);
-    let endDate = trip.end_date;
-    if (endDate) {
-        datesStr = datesStr + " - ";
-        datesStr = datesStr + makeDate(endDate.month, endDate.day, endDate.year);
-    }
-    dates.innerHTML = datesStr;
+    dates.innerHTML = startEndDates(trip.start_date, trip.end_date);
     dates.style.textAlign = "right";
     row2col2.appendChild(dates);
 
@@ -215,10 +226,11 @@ function layoutTrip(trip, ind) {
 
 }
 
-async function layoutOurTrips() {
+function layoutOurTrips() {
     let container = document.getElementById("ourtrips");
-    let res = await openJSON('trips.json');
-    let trips = res.trips;
+    // TRIPS = await openJSON('trips.json');
+
+    let trips = Object.keys(TRIPS);
 
     let ind = 0;
     let row;
@@ -241,7 +253,7 @@ async function layoutOurTrips() {
         col.classList.add(colClass);
         row.appendChild(col);
 
-        let tripDiv = layoutTrip(trips[ind], ind);
+        let tripDiv = layoutTrip(TRIPS[trips[ind]], ind);
 
         col.appendChild(tripDiv);
 
@@ -249,12 +261,23 @@ async function layoutOurTrips() {
     }
 }
 
+// need to finish this function and create form page
 function goToAddTripForm() {
     // go to the add trip form
     console.log("going to add trip form");
 }
 
-// trips we'd like to take
+function clickTrip(tripName) {
+    let url = new URL(window.location);
+    let searchParams = url.searchParams;
+    searchParams.set('tripName', tripName);
+    url.search = searchParams.toString();
+    let newURL = url.toString();
+    newURL = newURL.replace('home.html','trip-info.html');
+    window.location.href = newURL;
+}
+
+// trip info page
 function makeLocationString(location) {
     let country = location.country;
     let state = location.state;
@@ -291,6 +314,60 @@ function makeLocationString(location) {
     return returnStr;
 }
 
+function makeAllLocationString(locations) {
+    let locStr = makeLocationString(locations[0]);
+
+    if (locations.length > 1) {
+        if (locations.length == 2) {
+            locStr = locStr + " and ";
+        } else {
+            locStr = locStr + ", ";
+        }
+        for (let j = 1; j < locations.length; j++) {
+            let location = locations[j];
+            locStr = locStr + makeLocationString(location);
+            if (j + 2 < locations.length) {
+                locStr = locStr + ", ";
+            }
+            if (j + 2 == locations.length) {
+                locStr = locStr + ", and ";
+            }
+        }
+    }
+
+    return locStr;
+}
+
+async function loadTripInfo() {
+    TRIPS = await openJSON('trips.json');
+    PHOTOS = await openJSON('photos.json');
+
+    // get trip name from the URL
+    let url = new URL(window.location);
+    let searchParams = url.searchParams;
+    let tripName = searchParams.get('tripName');
+    let tripInfo = TRIPS[tripName];
+
+    let h1Title = document.getElementById("trip-title");
+    let pAddedBy = document.getElementById("added-by");
+    let h2Date = document.getElementById("trip-date");
+    let h3Location = document.getElementById("trip-location");
+    let pDesc = document.getElementById("trip-desc");
+    let img = document.getElementById("trip-img");
+    let pCaption = document.getElementById("trip-img-caption");
+
+    h1Title.innerHTML = tripInfo.name;
+    pAddedBy.innerHTML = "Added by: " + tripInfo.added_by;
+    h2Date.innerHTML = startEndDates(tripInfo.start_date, tripInfo.end_date);
+    h3Location.innerHTML = makeAllLocationString(tripInfo.locations);
+    pDesc.innerHTML = tripInfo.description;
+    img.src = PHOTO_DIR + tripInfo.primary_photo;
+    pCaption.innerHTML = PHOTOS[tripInfo.primary_photo];
+
+    loadPhotoGallery(tripInfo.photos);
+}
+
+// trips we'd like to take
 async function layoutTripsToTake() {
     let domesticUl = document.getElementById("tripstotake-domestic-ul");
     let internationalUl = document.getElementById("tripstotake-international-ul");
@@ -302,7 +379,6 @@ async function layoutTripsToTake() {
         let locations = trip.locations;
         let li = document.createElement("li");
         li.style.textAlign = "left"; // find a way to do this in CSS?
-        let locStr = makeLocationString(locations[0]);
 
         let domestic = true;
 
@@ -310,23 +386,7 @@ async function layoutTripsToTake() {
             domestic = false;
         }
 
-        if (locations.length > 1) {
-            if (locations.length == 2) {
-                locStr = locStr + " and ";
-            } else {
-                locStr = locStr + ", ";
-            }
-            for (let j = 1; j < locations.length; j++) {
-                let location = locations[j];
-                locStr = locStr + makeLocationString(location);
-                if (j + 2 < locations.length) {
-                    locStr = locStr + ", ";
-                }
-                if (j + 2 == locations.length) {
-                    locStr = locStr + ", and ";
-                }
-            }
-        }
+        let locStr = makeAllLocationString(locations);
 
         li.innerHTML = locStr;
         if (domestic) {
@@ -340,8 +400,28 @@ async function layoutTripsToTake() {
 
 // Photo gallery
 // this function isn't finished yet vv
-function loadPhotoGallery() {
+function createPhotoGalleryPhoto(path, photoGalleryDiv) {
+    let img = document.createElement("img");
+    img.src = PHOTO_DIR + path;
+    img.onclick = function() {selectPhoto(path)};
+    photoGalleryDiv.appendChild(img);
+}
+
+async function loadPhotoGallery(photoPaths=null) {
     let photoGallery = document.getElementById("photogallery");
+
+    if (photoPaths) {
+        for (let path in photoPaths) {
+            createPhotoGalleryPhoto(path, photoGallery);
+        }
+    } else {
+        let dir = 'Photos/';
+        let paths = Object.keys(PHOTOS);
+
+        for (let i = 0; i < paths.length; i++) {
+            createPhotoGalleryPhoto(paths[i], photoGallery);
+        }
+    }
 
     // open Photos directory and put all paths into a list
     // let fs = require('fs');
@@ -355,21 +435,27 @@ function loadPhotoGallery() {
 }
 
 function selectPhoto(path) {
+    console.log("A photo has been selected");
+    console.log("photos:");
+    console.log(PHOTOS);
+
     // open the selected-photo-overlay
     let overlay = document.getElementById("photo-gallery-modal");
     overlay.style.display = "block";
 
     let selectedPhotoImg = document.getElementById("selected-photo");
-    selectedPhotoImg.src = path;
+    selectedPhotoImg.src = PHOTO_DIR + path;
 
     let captionP = document.getElementById("selected-photo-caption");
-    // set innerHTML for captionP
+    captionP.innerHTML = PHOTOS[path];
 }
 
+// not finished
 function previousPhoto() {
 
 }
 
+// not finished
 function nextPhoto() {
 
 }
@@ -387,6 +473,7 @@ function goTo(htmlPath, divContainer=null) {
 }
 
 // special dates
+// not finished
 function sortDates(dates) {
     let sortedDates = [];
     
@@ -457,11 +544,13 @@ async function layoutTimeline() {
     }
 }
 
+// not finished
 function goToEditTimeline() {
     // go to a new page
 }
 
 // photo gallery PAGE
+// not finished
 function goToAddPhotos() {
     
 }

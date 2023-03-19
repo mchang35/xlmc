@@ -40,12 +40,13 @@ Still need to do:
 
 Questions and notes:
  - PHOTO GALLERY PAGE:
-   - we want captions to show up when you click on a picture. But captions are only found in the trips.json file
+   - we want captions to show up when you click on a picture. But captions are only found in the photos.json file
    - one option is that we have two copies of each picture: one in the trips.json file and one in a photos.json file (which has all photos just in one long list)
    - another option is to not put the actual photo path and caption in the trips.json file, but instead put an index or pointer or something to the picture in the trips.json file.. this could work
       - in the trips.json file, put just the photo path -- so it's "primary photo": "primary photo path"
       - in the photos.json file, it is literally an object, where you have path: caption
    - this ^ way, we are able to access the caption at all times easily and efficiently
+ - to be able to go to next and previous photo, maybe we can number the photos so that when users want to go next and previous, we know exactly which photo it is.. see how I did this with youmy productions website.
 
 Helpful resources:
  - Asynchronous functions (fetch): https://dmitripavlutin.com/javascript-fetch-async-await/

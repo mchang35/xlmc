@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>XLMC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+</head>
+
+<body onload="loadTripInfo();">
+
+<!-- Fix these onClicks -->
+<div id="navbar" class="navbar">
+    <a class="navbar-link" onClick="goTo('home.html', 'ourtrips-container');">Our Trips</a>
+    <a class="navbar-link" onClick="scrollToDiv('tripstotake-container');">Trips to Take</a>
+    <a class="navbar-link" onClick="scrollToDiv('businessideas-container');">Business Ideas and Shared Content</a>
+    <a class="navbar-link" onClick="scrollToDiv('photogallery-container');">Photo Gallery</a>
+    <a class="navbar-link" onClick="scrollToDiv('specialdates-container');">Special Dates</a>
+</div>
+
+<button style="margin:10px;" class="orange-transparent-button" onclick="goTo('home.html');">Back to Home Page</button>
+<br><br>
+<div class="trip-info-container">
+    <h1 id="trip-title" class="trip-info-text"></h1>
+    <p id="added-by" class="trip-info-text"></p>
+    <h2 id="trip-date" class="trip-info-text"></h2>
+    <h3 id="trip-location" class="trip-info-text"></h3>
+    <p id="trip-desc" class="trip-info-text"></p>
+    <img id="trip-img" class="center">
+    <p id="trip-img-caption" class="center"></p>
+
+    <h2 class="center">Trip Photos</h2>
+
+    <div id="photogallery">
+
+</div>
+
+<br><br>
+
+<p style="text-align:center">This website was created by Mandy Chang as a (late) Valentine's Day gift for Xue Lor in 2023. I love you!</p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

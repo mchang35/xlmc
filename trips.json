@@ -1,5 +1,5 @@
 {
-    "trips": [
+    "Surprise Trip to Fort Lauderdale, FL": 
         {
             "name": "Surprise Trip to Fort Lauderdale, FL",
             "description": "Xue surprised me with this trip! We visited Fort Lauderdale as a way of rewarding ourselves for our hard work so far as professionals in the labor force. This trip was our first official trip together as a couple, alone, where we flew somewhere together just us!",
@@ -21,12 +21,13 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": "Photos/placeholder.png",
+            "primary_photo": "placeholder.png",
             "photos": [
-                "Photos/placeholder.png",
-                "Photos/placeholderImage.png"
+                "placeholder.png",
+                "placeholderImage.png"
             ]
         },
+    "Providence, RI to Minnapolis, MN Road Trip":
         {
             "name": "Providence, RI to Minnapolis, MN Road Trip",
             "description": "After my graduation from Brown in Providence, Rhode Island, Xue drove with me (and all my stuff!) all the way back to Minneapolis. It was our first real trip together as a couple and our first road trip together too, just us. It was so much fun and we got to know each other a lot better, just driving and talking together.",
@@ -63,12 +64,13 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": "Photos/placeholder.png",
+            "primary_photo": "placeholder.png",
             "photos": [
-                "Photos/placeholder.png",
-                "Photos/placeholderImage.png"
+                "placeholder.png",
+                "placeholderImage.png"
             ]
         },
+        "Dang Thao Tour: Final Two Shows":
         {
             "name": "Dang Thao Tour: Final Two Shows",
             "description": "Mandy tagged along with Xue to Sacramento, CA and Fresno, CA to watch him and his brothers play for Dang Thao.",
@@ -95,11 +97,10 @@
                 "year": 2023
             },
             "added_by": "Mandy",
-            "primary_photo": "Photos/placeholder.png",
+            "primary_photo": "placeholder.png",
             "photos": [
-                "Photos/placeholder.png",
-                "Photos/placeholderImage.png"
+                "placeholder.png",
+                "placeholderImage.png"
             ]
-        }   
-    ]
+        }  
 }

@@ -131,12 +131,22 @@ button:hover {
   margin-bottom: 0;
 }
 
+.trip #title:hover {
+  color: pink;
+}
+
 .tripstotake-container {
     max-width: 75%; /* add a max width for mobile screens */
 }
 
 .tripstotake-ul li {
     text-align: left;
+}
+
+/* Trip Info (individual trip) Page */
+.trip-info-container {
+  max-width: 75%;
+  margin: auto;
 }
 
 /* Photo gallery */
@@ -193,15 +203,22 @@ button:hover {
 }
 
 .selected-photo-overlay {
-  margin: 20% auto;
+  margin: auto;
   border-color: #cf6d48;
   border-style: solid;
   border-width: 3px;
   background-color: #f8f0de;
+  /* used to be max */
   max-width: 75%;
   max-height: 75%;
   padding: 10px;
   z-index: 1;
+
+  /* for vertical centering */
+  /* top: 200px; */
+  /* -ms-transform: translateY(40%);  */
+  transform: translateY(50%);
+
 }
 
 .selected-photo-button {
