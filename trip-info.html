@@ -41,13 +41,13 @@
           <span onclick="closeSelectedPhoto();" class="close">&times;</span>
           <div class="row">
             <div class="col selected-photo-button">
-              <button class="orange-transparent-button" onclick="previousPhoto();">&#8249;</button>
+              <button class="orange-transparent-button" onclick="nextPrevPhoto(-1);">&#8249;</button>
             </div>
             <div class="col-8">
               <img id="selected-photo" src="Photos/placeholder.png">
             </div>
             <div class="col selected-photo-button">
-              <button class="orange-transparent-button" onclick="nextPhoto();">&#8250;</button>
+              <button class="orange-transparent-button" onclick="nextPrevPhoto(1);">&#8250;</button>
             </div>
           </div>
           <p id="selected-photo-caption" class="selected-photo-caption"></p>

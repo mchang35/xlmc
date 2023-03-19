@@ -20,9 +20,8 @@ Pages
  - Photo gallery -- gallery of all photos that we have
 
 Still need to do:
- - Make photo gallery page
-    - when you click on an individual photo, you can see it larger (in a popup?) and go to the next/previous photo and see a caption for the photo
- - make individual event/trip page
+ - add "#/total number of pics" in the pop up when user clicks on an image
+ - fix previous/next photo implementation
  - sort the dates so that they always show up in order on the timeline -- implement MergeSort?
  - add interactivity for users to:
     - add photos to photo gallery
@@ -30,13 +29,6 @@ Still need to do:
     - add locations to wishlist
     - add trips we've been on
     - NOT SURE IF THIS INTERACTIVITY IS POSSIBLE SINCE WE ARE UNABLE TO ACCESS THE FILE SYSTEM WITHOUT NODE.JS
- - titles font (from Google fonts): 
-    - Bebas Neue
-    - Titan One
-    - Gloock
-    - Ultra
-    - Yeseva One -- CLOSEST ONE 
-    - DM Serif Text
 
 Questions and notes:
  - PHOTO GALLERY PAGE:
@@ -47,6 +39,7 @@ Questions and notes:
       - in the photos.json file, it is literally an object, where you have path: caption
    - this ^ way, we are able to access the caption at all times easily and efficiently
  - to be able to go to next and previous photo, maybe we can number the photos so that when users want to go next and previous, we know exactly which photo it is.. see how I did this with youmy productions website.
+   - currently, previous and next aren't working. Maybe it's because of the photo path.
 
 Helpful resources:
  - Asynchronous functions (fetch): https://dmitripavlutin.com/javascript-fetch-async-await/
@@ -55,4 +48,11 @@ Helpful resources:
  - Making any element sticky: https://www.w3schools.com/howto/howto_css_sticky_element.asp
  - Creating pop-up window (for photo gallery): https://www.w3schools.com/howto/howto_css_modals.asp
  
- 
+Scratch notes: 
+ - titles font (from Google fonts): 
+    - Bebas Neue
+    - Titan One
+    - Gloock
+    - Ultra
+    - Yeseva One -- CLOSEST ONE 
+    - DM Serif Text

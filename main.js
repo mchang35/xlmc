@@ -2,7 +2,9 @@
 var loginAnswer;
 var TRIPS = {};
 var PHOTOS = {};
-var PHOTO_DIR = "Photos/"
+var PHOTO_DIR = "Photos/";
+var SELECTEDPHOTONUM;
+var NUM_PHOTOS;
 
 // index
 async function openJSON(path) {
@@ -111,6 +113,7 @@ async function loadAllHome(goToDiv=null) {
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
+    // loadPhotoGallery();
     layoutTimeline();
 
     if (goToDiv) {
@@ -400,28 +403,29 @@ async function layoutTripsToTake() {
 
 // Photo gallery
 // this function isn't finished yet vv
-function createPhotoGalleryPhoto(path, photoGalleryDiv) {
-    let img = document.createElement("img");
-    img.src = PHOTO_DIR + path;
-    img.onclick = function() {selectPhoto(path)};
-    photoGalleryDiv.appendChild(img);
+function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
+    for (let i = 0; i < paths.length; i++) {
+        let img = document.createElement("img");
+        img.src = PHOTO_DIR + paths[i];
+        img.onclick = function() {selectPhoto(paths[i], i)};
+        photoGalleryDiv.appendChild(img);
+        img.setAttribute("id", "photo-" + i);
+    }
 }
 
 async function loadPhotoGallery(photoPaths=null) {
     let photoGallery = document.getElementById("photogallery");
+    let paths;
 
     if (photoPaths) {
-        for (let i in photoPaths) {
-            createPhotoGalleryPhoto(photoPaths[i], photoGallery);
-        }
+        paths = photoPaths;
     } else {
-        let dir = 'Photos/';
-        let paths = Object.keys(PHOTOS);
-
-        for (let i = 0; i < paths.length; i++) {
-            createPhotoGalleryPhoto(paths[i], photoGallery);
-        }
+        paths = Object.keys(PHOTOS);
     }
+
+    NUM_PHOTOS = paths.length;
+
+    createPhotoGalleryPhotos(paths, photoGallery);
 
     // open Photos directory and put all paths into a list
     // let fs = require('fs');
@@ -434,20 +438,48 @@ async function loadPhotoGallery(photoPaths=null) {
     // add img item to the photogallery div
 }
 
-function selectPhoto(path) {
+function selectPhoto(path, ind) {
     // open the selected-photo-overlay
     let overlay = document.getElementById("photo-gallery-modal");
     overlay.style.display = "block";
 
+    setSelectedPhoto(path, ind);
+}
+
+function setSelectedPhoto(path, ind) {
     let selectedPhotoImg = document.getElementById("selected-photo");
     selectedPhotoImg.src = PHOTO_DIR + path;
 
     let captionP = document.getElementById("selected-photo-caption");
     captionP.innerHTML = PHOTOS[path];
+
+    SELECTEDPHOTONUM = ind;
 }
 
 // not finished
-function previousPhoto() {
+function nextPrevPhoto(dir) {
+    let newNum = SELECTEDPHOTONUM;
+
+    console.log(SELECTEDPHOTONUM);
+
+    if (dir > 0) {
+        newNum = SELECTEDPHOTONUM + 1;
+        if (newNum > NUM_PHOTOS) {
+            newNum = 0;
+        }
+    } else {
+        newNum = SELECTEDPHOTONUM - 1;
+        if (newNum < 0) {
+            newNum = NUM_PHOTOS - 1;
+        }
+    }
+
+    console.log(newNum);
+    
+    let newPath = document.getElementById("photo-" + newNum).src;
+
+    setSelectedPhoto(newPath, newNum);
+    SELECTEDPHOTONUM = newNum;
 
 }
 
