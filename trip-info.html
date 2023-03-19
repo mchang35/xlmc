@@ -31,9 +31,29 @@
     <img id="trip-img" class="center">
     <p id="trip-img-caption" class="center"></p>
 
+    <br><br>
+
     <h2 class="center">Trip Photos</h2>
 
-    <div id="photogallery">
+    <div id="photogallery"></div>
+    <div id="photo-gallery-modal" class="photo-gallery-modal">
+        <div id="selected-photo-overlay" class="selected-photo-overlay center">
+          <span onclick="closeSelectedPhoto();" class="close">&times;</span>
+          <div class="row">
+            <div class="col selected-photo-button">
+              <button class="orange-transparent-button" onclick="previousPhoto();">&#8249;</button>
+            </div>
+            <div class="col-8">
+              <img id="selected-photo" src="Photos/placeholder.png">
+            </div>
+            <div class="col selected-photo-button">
+              <button class="orange-transparent-button" onclick="nextPhoto();">&#8250;</button>
+            </div>
+          </div>
+          <p id="selected-photo-caption" class="selected-photo-caption"></p>
+          <button class="orange-transparent-button" onclick="closeSelectedPhoto();">Close</button>
+        </div>
+      </div>
 
 </div>
 

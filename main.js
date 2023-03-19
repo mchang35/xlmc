@@ -411,8 +411,8 @@ async function loadPhotoGallery(photoPaths=null) {
     let photoGallery = document.getElementById("photogallery");
 
     if (photoPaths) {
-        for (let path in photoPaths) {
-            createPhotoGalleryPhoto(path, photoGallery);
+        for (let i in photoPaths) {
+            createPhotoGalleryPhoto(photoPaths[i], photoGallery);
         }
     } else {
         let dir = 'Photos/';
@@ -435,10 +435,6 @@ async function loadPhotoGallery(photoPaths=null) {
 }
 
 function selectPhoto(path) {
-    console.log("A photo has been selected");
-    console.log("photos:");
-    console.log(PHOTOS);
-
     // open the selected-photo-overlay
     let overlay = document.getElementById("photo-gallery-modal");
     overlay.style.display = "block";
