@@ -154,6 +154,9 @@ button:hover {
   display: block;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+.max-h-700 {
   max-height: 700px;
   overflow-y: scroll;
 }

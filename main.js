@@ -106,7 +106,7 @@ function timeTogether() {
     elapsedDiv.innerHTML = yrStr + dayStr + hrStr + minStr + sStr + " down..."
 }
 
-async function loadAllHome(goToDiv=null) {
+async function loadAllHome() {
     TRIPS = await openJSON('trips.json');
     PHOTOS = await openJSON('photos.json');
     timeTogether();
@@ -114,6 +114,12 @@ async function loadAllHome(goToDiv=null) {
     layoutTripsToTake();
     // loadPhotoGallery();
     layoutTimeline();
+
+    let url = new URL(window.location);
+    let searchParams = url.searchParams;
+    let goToDiv = searchParams.get('section');
+
+    console.log("goToDiv: " + goToDiv);
 
     if (goToDiv) {
         scrollToDiv(goToDiv);
@@ -272,6 +278,9 @@ function goToAddTripForm() {
 function clickTrip(tripName) {
     let url = new URL(window.location);
     let searchParams = url.searchParams;
+
+    searchParams.delete('section');
+
     searchParams.set('tripName', tripName);
     url.search = searchParams.toString();
     let newURL = url.toString();
@@ -401,7 +410,6 @@ async function layoutTripsToTake() {
 }
 
 // Photo gallery
-// this function isn't finished yet vv
 function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
     for (let i = 0; i < paths.length; i++) {
         let img = document.createElement("img");
@@ -412,6 +420,7 @@ function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
     }
 }
 
+// could refine this to retrieve and write to the Photos directory
 async function loadPhotoGallery(photoPaths=null) {
     let photoGallery = document.getElementById("photogallery");
     let paths;
@@ -438,8 +447,6 @@ async function loadPhotoGallery(photoPaths=null) {
 }
 
 function setSelectedPhoto(path, ind) {
-    // console.log("the selected photo path is " + path);
-    // console.log("the selected photo index is "+ ind);
 
     let splitPath = path.split("/");
     let refinedPath = splitPath[splitPath.length - 1];
@@ -461,7 +468,6 @@ function selectPhoto(path, ind) {
     setSelectedPhoto(path, ind);
 }
 
-// not finished
 function nextPrevPhoto(dir) {
     let newNum = SELECTEDPHOTONUM;
 
@@ -489,21 +495,30 @@ function nextPrevPhoto(dir) {
 
 }
 
-// not finished
-function nextPhoto() {
-
-}
-
 function closeSelectedPhoto() {
     document.getElementById("photo-gallery-modal").style.display = "none";
 }
 
-function goTo(htmlPath, divContainer=null) {
+function goTo(htmlPath) {
     window.location.href = htmlPath;
+}
 
-    if (divContainer) {
-        scrollToDiv(divContainer);
-    }
+// primarily for the photoGallery.html and trip-info.html files
+function goBackHome(divContainer) {
+    let url = new URL(window.location);
+    let searchParams = url.searchParams;
+
+    searchParams.delete('tripName');
+
+    searchParams.set('section', divContainer);
+    url.search = searchParams.toString();
+    let newURL = url.toString();
+
+    let URLparts = newURL.split(".html")[0].split("/");
+    let currPage = URLparts[URLparts.length - 1];
+
+    newURL = newURL.replace(currPage + '.html','home.html');
+    window.location.href = newURL;
 }
 
 // special dates
