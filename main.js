@@ -8,7 +8,6 @@ var NUM_PHOTOS;
 
 // index
 async function openJSON(path) {
-    console.log("loading questions...")
     let res = await fetch(path);
     data = await res.json();
     return data;
@@ -438,22 +437,28 @@ async function loadPhotoGallery(photoPaths=null) {
     // add img item to the photogallery div
 }
 
+function setSelectedPhoto(path, ind) {
+    // console.log("the selected photo path is " + path);
+    // console.log("the selected photo index is "+ ind);
+
+    let splitPath = path.split("/");
+    let refinedPath = splitPath[splitPath.length - 1];
+
+    let selectedPhotoImg = document.getElementById("selected-photo");
+    selectedPhotoImg.src = PHOTO_DIR + refinedPath;
+
+    let captionP = document.getElementById("selected-photo-caption");
+    captionP.innerHTML = PHOTOS[refinedPath];
+
+    SELECTEDPHOTONUM = ind;
+}
+
 function selectPhoto(path, ind) {
     // open the selected-photo-overlay
     let overlay = document.getElementById("photo-gallery-modal");
     overlay.style.display = "block";
 
     setSelectedPhoto(path, ind);
-}
-
-function setSelectedPhoto(path, ind) {
-    let selectedPhotoImg = document.getElementById("selected-photo");
-    selectedPhotoImg.src = PHOTO_DIR + path;
-
-    let captionP = document.getElementById("selected-photo-caption");
-    captionP.innerHTML = PHOTOS[path];
-
-    SELECTEDPHOTONUM = ind;
 }
 
 // not finished
@@ -474,9 +479,10 @@ function nextPrevPhoto(dir) {
         }
     }
 
-    console.log(newNum);
+    console.log("new number: "+ newNum);
     
     let newPath = document.getElementById("photo-" + newNum).src;
+    console.log("new path: "+ newPath);
 
     setSelectedPhoto(newPath, newNum);
     SELECTEDPHOTONUM = newNum;
