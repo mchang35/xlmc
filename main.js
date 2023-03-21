@@ -109,6 +109,9 @@ function timeTogether() {
 async function loadAllHome() {
     TRIPS = await openJSON('trips.json');
     PHOTOS = await openJSON('photos.json');
+    NUM_PHOTOS = Object.keys(PHOTOS).length; // remove this later
+    // ^^ this is already defined in the load photo gallery function
+
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
@@ -118,8 +121,6 @@ async function loadAllHome() {
     let url = new URL(window.location);
     let searchParams = url.searchParams;
     let goToDiv = searchParams.get('section');
-
-    console.log("goToDiv: " + goToDiv);
 
     if (goToDiv) {
         scrollToDiv(goToDiv);
@@ -458,6 +459,7 @@ function setSelectedPhoto(path, ind) {
     captionP.innerHTML = PHOTOS[refinedPath];
 
     SELECTEDPHOTONUM = ind;
+    document.getElementById("photo-num").innerHTML = String(ind + 1);
 }
 
 function selectPhoto(path, ind) {
@@ -466,12 +468,12 @@ function selectPhoto(path, ind) {
     overlay.style.display = "block";
 
     setSelectedPhoto(path, ind);
+
+    document.getElementById("total-photos").innerHTML = String(NUM_PHOTOS);
 }
 
 function nextPrevPhoto(dir) {
     let newNum = SELECTEDPHOTONUM;
-
-    console.log(SELECTEDPHOTONUM);
 
     if (dir > 0) {
         newNum = SELECTEDPHOTONUM + 1;
@@ -484,11 +486,8 @@ function nextPrevPhoto(dir) {
             newNum = NUM_PHOTOS - 1;
         }
     }
-
-    console.log("new number: "+ newNum);
     
     let newPath = document.getElementById("photo-" + newNum).src;
-    console.log("new path: "+ newPath);
 
     setSelectedPhoto(newPath, newNum);
     SELECTEDPHOTONUM = newNum;

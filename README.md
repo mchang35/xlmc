@@ -20,7 +20,6 @@ Pages
  - Photo gallery -- gallery of all photos that we have
 
 Still need to do:
- - add "#/total number of pics" in the pop up when user clicks on an image
  - sort the dates so that they always show up in order on the timeline -- implement MergeSort?
  - add interactivity for users to:
     - add photos to photo gallery
@@ -28,15 +27,6 @@ Still need to do:
     - add locations to wishlist
     - add trips we've been on
     - NOT SURE IF THIS INTERACTIVITY IS POSSIBLE SINCE WE ARE UNABLE TO ACCESS THE FILE SYSTEM WITHOUT NODE.JS
-
-Questions and notes:
- - PHOTO GALLERY PAGE:
-   - we want captions to show up when you click on a picture. But captions are only found in the photos.json file
-   - one option is that we have two copies of each picture: one in the trips.json file and one in a photos.json file (which has all photos just in one long list)
-   - another option is to not put the actual photo path and caption in the trips.json file, but instead put an index or pointer or something to the picture in the trips.json file.. this could work
-      - in the trips.json file, put just the photo path -- so it's "primary photo": "primary photo path"
-      - in the photos.json file, it is literally an object, where you have path: caption
-   - this ^ way, we are able to access the caption at all times easily and efficiently
 
 Helpful resources:
  - Asynchronous functions (fetch): https://dmitripavlutin.com/javascript-fetch-async-await/
@@ -53,3 +43,10 @@ Scratch notes:
     - Ultra
     - Yeseva One -- CLOSEST ONE 
     - DM Serif Text
+ - PHOTO GALLERY PAGE:
+   - we want captions to show up when you click on a picture. But captions are only found in the photos.json file
+   - one option is that we have two copies of each picture: one in the trips.json file and one in a photos.json file (which has all photos just in one long list)
+   - another option is to not put the actual photo path and caption in the trips.json file, but instead put an index or pointer or something to the picture in the trips.json file.. this could work
+      - in the trips.json file, put just the photo path -- so it's "primary photo": "primary photo path"
+      - in the photos.json file, it is literally an object, where you have path: caption
+   - this ^ way, we are able to access the caption at all times easily and efficiently
