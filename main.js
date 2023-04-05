@@ -433,8 +433,7 @@ async function loadPhotoGallery(photoPaths=null) {
         // paths = Object.keys(PHOTOS);
 
         // trying the directory version
-        const fs = require("fs");
-        paths = fs.readdirSync(PHOTO_DIR);
+        let url = "https://api.github.com/repos/mchang35/xlmc/git/trees/master?recursive=1";
     }
 
     NUM_PHOTOS = paths.length;

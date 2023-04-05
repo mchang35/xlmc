@@ -70,6 +70,133 @@
                 "placeholderImage.png"
             ]
         },
+        "Mandy's Graduation": {
+            "name": "Mandy's Graduation",
+            "description": "My family and Xue came all the way from Minnesota to Providence, RI to celebrate my graduation from Brown University!",
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "Rhode Island",
+                    "city": "Providence"
+                }
+            ],
+            "start_date": {
+                "month": 5,
+                "day": 28,
+                "year": 2022
+            },
+            "end_date": {
+                "month": 6,
+                "day": 1,
+                "year": 2022
+            },
+            "added_by": "Mandy",
+            "primary_photo": "",
+            "photos": [
+                "CVTU8714.JPG"
+            ]
+        },
+        "Hike at Taylors Falls with Mandy's Family": {
+            "name": "Hike at Taylors Falls with Mandy's Family",
+            "description": "Xue tagged along with Mandy's family to go on a hike at Taylors Falls state park. It was his first extended trip with her family and it meant a lot to her because he really got to know her family well and they got to know him better too!",
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "Minnesota",
+                    "city": "Taylors Falls"
+                }
+            ],
+            "start_date": {
+                "month": 6,
+                "day": 19,
+                "year": 2020
+            },
+            "end_date": {
+                "month": 6,
+                "day": 19,
+                "year": 2020
+            },
+            "added_by": "Mandy",
+            "primary_photo": "DSC0086.JPG",
+            "photos": [
+                "DSC0080.JPG",
+                "DSC0086.JPG",
+                "DSC00109.JPG",
+                "DSC00114.JPG",
+                "DSC00141.JPG",
+                "DSC00142.JPG",
+                "DSC00150.JPG",
+                "DSC00152.JPG",
+                "DSC00154.JPG",
+                "DSC00155.JPG",
+                "DSC00159.JPG",
+                "DSC00160.JPG",
+                "DSC00162.JPG",
+                "DSC00182.JPG",
+                "DSC00184.JPG",
+                "DSC00186.JPG",
+                "DSC00198.JPG",
+                "DSC00204.JPG",
+                "DSC00205.JPG",
+                "DSC00206.JPG",
+                "DSC00207.JPG",
+                "DSC00208.JPG",
+                "DSC00209.JPG",
+                "DSC00234.JPG",
+                "DSC00236.JPG",
+                "DSC00237.JPG",
+                "DSC00238.JPG",
+                "DSC00239.JPG",
+                "DSC00240.JPG",
+                "DSC00241.JPG",
+                "DSC00242.JPG",
+                "DSC00243.JPG",
+                "DSC00245.JPG",
+                "DSC00259.JPG",
+                "DSC00261.JPG",
+                "DSC00276.JPG",
+                "DSC00277.JPG",
+                "DSC00298.JPG",
+                "DSC00299.JPG",
+                "DSC00316.JPG",
+                "DSC00317.JPG",
+                "DSC00335.JPG",
+                "DSC00337.JPG",
+                "DSC00345.JPG",
+                "DSC00347.JPG",
+                "DSC00350.JPG",
+                "DSC00351.JPG",
+                "DSC00353.JPG",
+                "DSC00366.JPG",
+                "DSC00374.JPG",
+                "DSC00397.JPG",
+                "DSC00398.JPG",
+                "DSC00399.JPG",
+                "DSC00400.JPG",
+                "DSC00413.JPG",
+                "DSC00414.JPG",
+                "DSC00415.JPG",
+                "DSC00430.JPG",
+                "DSC00434.JPG",
+                "DSC00478.JPG",
+                "DSC00487.JPG",
+                "DSC00488.JPG",
+                "DSC00490.JPG",
+                "DSC00492.JPG",
+                "DSC00493.JPG",
+                "DSC00494.JPG",
+                "DSC00516.JPG",
+                "DSC00540.JPG",
+                "DSC00646.JPG",
+                "DSC00650.JPG",
+                "DSC00652.JPG",
+                "DSC00654.JPG",
+                "DSC00655.JPG",
+                "DSC00656.JPG",
+                "DSC00657.JPG",
+                "DSC00659.JPG"
+            ]
+        },
         "Dang Thao Tour: Final Two Shows":
         {
             "name": "Dang Thao Tour: Final Two Shows",
