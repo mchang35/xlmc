@@ -1,3 +1,4 @@
+// import * as fs from 'fs';
 
 var loginAnswer;
 var TRIPS = {};
@@ -115,7 +116,7 @@ async function loadAllHome() {
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
-    // loadPhotoGallery();
+    loadPhotoGallery();
     layoutTimeline();
 
     let url = new URL(window.location);
@@ -429,7 +430,11 @@ async function loadPhotoGallery(photoPaths=null) {
     if (photoPaths) {
         paths = photoPaths;
     } else {
-        paths = Object.keys(PHOTOS);
+        // paths = Object.keys(PHOTOS);
+
+        // trying the directory version
+        const fs = require("fs");
+        paths = fs.readdirSync(PHOTO_DIR);
     }
 
     NUM_PHOTOS = paths.length;
