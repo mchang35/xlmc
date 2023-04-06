@@ -54,8 +54,8 @@
                 }
             ],
             "start_date": {
-                "month": 6,
-                "day": 2,
+                "month": 5,
+                "day": 31,
                 "year": 2022
             },
             "end_date": {
@@ -64,13 +64,22 @@
                 "year": 2022
             },
             "added_by": "Mandy",
-            "primary_photo": "placeholder.png",
+            "primary_photo": "",
             "photos": [
-                "placeholder.png",
-                "placeholderImage.png"
+                "IMG_3157.HEIC",
+                "IMG_3176.HEIC",
+                "IMG_3181.JPG",
+                "IMG_3182.JPG",
+                "IMG_3188.HEIC",
+                "IMG_3196.JPG",
+                "IMG_3208.HEIC",
+                "IMG_3216.HEIC",
+                "IMG_3230.HEIC",
+                "IMG_3234.JPG"
             ]
         },
-        "Mandy's Graduation": {
+    "Mandy's Graduation": 
+        {
             "name": "Mandy's Graduation",
             "description": "My family and Xue came all the way from Minnesota to Providence, RI to celebrate my graduation from Brown University!",
             "locations": [
@@ -93,10 +102,17 @@
             "added_by": "Mandy",
             "primary_photo": "",
             "photos": [
-                "CVTU8714.JPG"
+                "CVTU8714.JPG",
+                "IMG_2593.HEIC",
+                "IMG_2594.HEIC",
+                "IMG_3060.HEIC",
+                "IMG_3097.JPG",
+                "IMG_3099.JPG",
+                "IMG_3139.JPG"
             ]
         },
-        "Hike at Taylors Falls with Mandy's Family": {
+    "Hike at Taylors Falls with Mandy's Family": 
+        {
             "name": "Hike at Taylors Falls with Mandy's Family",
             "description": "Xue tagged along with Mandy's family to go on a hike at Taylors Falls state park. It was his first extended trip with her family and it meant a lot to her because he really got to know her family well and they got to know him better too!",
             "locations": [
@@ -197,7 +213,84 @@
                 "DSC00659.JPG"
             ]
         },
-        "Dang Thao Tour: Final Two Shows":
+    "Xue Visits Mandy in Providence During Senior Year, Part 1":
+        {
+            "name": "Xue Visits Mandy in Providence During Senior Fall",
+            "description": "Xue came to Providence to visit Mandy during their fall semester of their senior year!",
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "Rhode Island",
+                    "city": "Providence"
+                }
+            ],
+            "start_date": {
+                "month": 10,
+                "day": null,
+                "year": 2021
+            },
+            "end_date": {
+                "month": 10,
+                "day": null,
+                "year": 2021
+            },
+            "added_by": "Mandy",
+            "primary_photo": "IMG_1418.HEIC",
+            "photos": [
+                "IMG_1418.HEIC",
+                "IMG_1419.HEIC",
+                "IMG_1421.HEIC",
+                "IMG_1423.HEIC",
+                "IMG_1424.HEIC",
+                "IMG_1425.HEIC",
+                "IMG_1433.JPG",
+                "IMG_1434.JPG",
+                "IMG_1457.HEIC"
+            ]
+        },
+    "Xue Visits Mandy in Providence During Senior Year, Part 2":
+        {
+            "name": "Xue Visits Mandy in Providence During Senior Spring",
+            "description": "Xue came to Providence to visit Mandy during their senior year, but this time, it was in the spring semester! This visit was basically two years after he had visited her at Brown for the first time.",
+            "locations": [
+                {
+                    "country": "United States of America",
+                    "state": "Rhode Island",
+                    "city": "Providence"
+                }
+            ],
+            "start_date": {
+                "month": 3,
+                "day": null,
+                "year": 2022
+            },
+            "end_date": {
+                "month": 3,
+                "day": null,
+                "year": 2022
+            },
+            "added_by": "Mandy",
+            "primary_photo": "",
+            "photos": [
+                "IMG_2407.HEIC",
+                "IMG_2409.HEIC",
+                "IMG_2431.HEIC",
+                "IMG_2434.HEIC",
+                "IMG_2437.JPG",
+                "IMG_2445.HEIC",
+                "IMG_2446.HEIC",
+                "IMG_2446.HEIC",
+                "IMG_2449.HEIC",
+                "IMG_2451.JPG",
+                "IMG_2453.JPG",
+                "IMG_2458.JPG",
+                "IMG_2463.JPG",
+                "IMG_2470.JPG",
+                "IMG_2471.HEIC",
+                "IMG_2472.HEIC"
+            ]
+        },
+    "Dang Thao Tour: Final Two Shows":
         {
             "name": "Dang Thao Tour: Final Two Shows",
             "description": "Mandy tagged along with Xue to Sacramento, CA and Fresno, CA to watch him and his brothers play for Dang Thao.",
