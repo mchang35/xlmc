@@ -110,13 +110,17 @@ function timeTogether() {
 async function loadAllHome() {
     TRIPS = await openJSON('trips.json');
     PHOTOS = await openJSON('photos.json');
+    console.log("All photos:");
+    console.log(PHOTOS);
     NUM_PHOTOS = Object.keys(PHOTOS).length; // remove this later
     // ^^ this is already defined in the load photo gallery function
 
     timeTogether();
     layoutOurTrips();
     layoutTripsToTake();
+    console.log("About to load the photo gallery...");
     loadPhotoGallery();
+    console.log("Done loading the photo gallery.");
     layoutTimeline();
 
     let url = new URL(window.location);
@@ -413,7 +417,10 @@ async function layoutTripsToTake() {
 
 // Photo gallery
 function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
+    console.log("All paths: ");
+    console.log(paths);
     for (let i = 0; i < paths.length; i++) {
+        console.log("    i: " + i + ", path: " + paths[i]);
         let img = document.createElement("img");
         img.src = PHOTO_DIR + paths[i];
         img.onclick = function() {selectPhoto(paths[i], i)};
@@ -430,10 +437,10 @@ async function loadPhotoGallery(photoPaths=null) {
     if (photoPaths) {
         paths = photoPaths;
     } else {
-        // paths = Object.keys(PHOTOS);
+        paths = Object.keys(PHOTOS);
 
         // trying the directory version
-        let url = "https://api.github.com/repos/mchang35/xlmc/git/trees/master?recursive=1";
+        // let url = "https://api.github.com/repos/mchang35/xlmc/git/trees/master?recursive=1";
     }
 
     NUM_PHOTOS = paths.length;
