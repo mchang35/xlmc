@@ -109,11 +109,6 @@ function timeTogether() {
 
 async function loadAllHome() {
     TRIPS = await openJSON('trips.json');
-    PHOTOS = await openJSON('photos.json');
-    console.log("All photos:");
-    console.log(PHOTOS);
-    NUM_PHOTOS = Object.keys(PHOTOS).length; // remove this later
-    // ^^ this is already defined in the load photo gallery function
 
     timeTogether();
     layoutOurTrips();
@@ -417,8 +412,6 @@ async function layoutTripsToTake() {
 
 // Photo gallery
 function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
-    console.log("All paths: ");
-    console.log(paths);
     for (let i = 0; i < paths.length; i++) {
         console.log("    i: " + i + ", path: " + paths[i]);
         let img = document.createElement("img");
@@ -431,12 +424,19 @@ function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
 
 // could refine this to retrieve and write to the Photos directory
 async function loadPhotoGallery(photoPaths=null) {
+    PHOTOS = await openJSON('photos.json');
+    console.log("All photos:");
+    console.log(PHOTOS);
+    NUM_PHOTOS = Object.keys(PHOTOS).length;
+
     let photoGallery = document.getElementById("photogallery");
     let paths;
 
     if (photoPaths) {
+        console.log("photoPaths is null");
         paths = photoPaths;
     } else {
+        console.log("photoPaths is not null");
         paths = Object.keys(PHOTOS);
 
         // trying the directory version
