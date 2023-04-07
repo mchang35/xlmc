@@ -413,7 +413,6 @@ async function layoutTripsToTake() {
 // Photo gallery
 function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
     for (let i = 0; i < paths.length; i++) {
-        console.log("    i: " + i + ", path: " + paths[i]);
         let img = document.createElement("img");
         img.src = PHOTO_DIR + paths[i];
         img.onclick = function() {selectPhoto(paths[i], i)};
@@ -425,8 +424,6 @@ function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
 // could refine this to retrieve and write to the Photos directory
 async function loadPhotoGallery(photoPaths=null) {
     PHOTOS = await openJSON('photos.json');
-    console.log("All photos:");
-    console.log(PHOTOS);
     NUM_PHOTOS = Object.keys(PHOTOS).length;
 
     let photoGallery = document.getElementById("photogallery");

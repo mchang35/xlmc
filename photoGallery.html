@@ -27,42 +27,6 @@
     <h1>Photo Gallery</h1>
     <br><br>
     <div id="photogallery">
-        <!-- <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png">
-        <img onclick="selectPhoto('Photos/placeholder.png');" src='Photos/placeholder.png'>
-        <img onclick="selectPhoto('Photos/placeholderImage.png');" src="Photos/placeholderImage.png"> -->
     </div>
 
     <div id="photo-gallery-modal" class="photo-gallery-modal">
@@ -79,8 +43,12 @@
               <button class="orange-transparent-button" onclick="nextPrevPhoto(1);">&#8250;</button>
             </div>
           </div>
-          <p id="selected-photo-caption" class="selected-photo-caption"></p>
-          <button class="orange-transparent-button" onclick="closeSelectedPhoto();">Close</button>
+          <div class="row">
+            <div class="col">
+              <p id="selected-photo-caption" class="selected-photo-caption"></p>
+              <button class="orange-transparent-button" onclick="closeSelectedPhoto();">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     <br>
