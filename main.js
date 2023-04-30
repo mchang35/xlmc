@@ -109,6 +109,7 @@ function timeTogether() {
 
 async function loadAllHome() {
     TRIPS = await openJSON('trips.json');
+    PHOTOS = await openJSON('photos.json');
 
     timeTogether();
     layoutOurTrips();
@@ -188,9 +189,8 @@ function startEndDates(start, end) {
 
 function layoutTrip(trip, ind) {
     console.log("ind: " + ind);
-    console.log("    trip:");
-    console.log(trip);
-    console.log("    primary photo:" + trip.primary_photo);
+    console.log("    trip: " + trip.name);
+    console.log("    primary photo: " + PHOTO_DIR + trip.primary_photo);
 
     // create a div for the trip == make it a grid
     let tripDiv = document.createElement("div");
@@ -205,10 +205,10 @@ function layoutTrip(trip, ind) {
     row1.appendChild(row1col);
     let photo = document.createElement("img");
     photo.onclick = function() {clickTrip(trip.name)};
-    photo.setAttribute("src", PHOTO_DIR + trip.primary_photo);
-    photo.setAttribute("alt", PHOTOS[trip.primary_photo]);
-    // photo.src = PHOTO_DIR + trip.primary_photo;
-    // photo.alt = PHOTOS[trip.primary_photo];
+    // photo.setAttribute("src", PHOTO_DIR + trip.primary_photo);
+    // photo.setAttribute("alt", PHOTOS[trip.primary_photo]);
+    photo.src = PHOTO_DIR + trip.primary_photo;
+    photo.alt = PHOTOS[trip.primary_photo];
     row1col.appendChild(photo);
 
     // row 2
@@ -247,11 +247,8 @@ function layoutOurTrips() {
     console.log("we are laying out trips");
 
     let container = document.getElementById("ourtrips");
-    // TRIPS = await openJSON('trips.json');
 
     let trips = Object.keys(TRIPS);
-    console.log("Trips: ");
-    console.log(trips);
 
     let ind = 0;
     let row;
@@ -434,10 +431,7 @@ function createPhotoGalleryPhotos(paths, photoGalleryDiv) {
 }
 
 // could refine this to retrieve and write to the Photos directory
-async function loadPhotoGallery(photoPaths=null) {
-    PHOTOS = await openJSON('photos.json');
-    NUM_PHOTOS = Object.keys(PHOTOS).length;
-
+function loadPhotoGallery(photoPaths=null) {
     let photoGallery = document.getElementById("photogallery");
     let paths;
 
@@ -445,24 +439,11 @@ async function loadPhotoGallery(photoPaths=null) {
         paths = photoPaths;
     } else {
         paths = Object.keys(PHOTOS);
-
-        // trying the directory version
-        // let url = "https://api.github.com/repos/mchang35/xlmc/git/trees/master?recursive=1";
     }
 
     NUM_PHOTOS = paths.length;
 
     createPhotoGalleryPhotos(paths, photoGallery);
-
-    // open Photos directory and put all paths into a list
-    // let fs = require('fs');
-    // let photoPaths = fs.readdirSync('Photos/');
-
-    // console.log("Photo paths");
-    // console.log(photoPaths);
-
-    // for each photo: create img item, with src as the path
-    // add img item to the photogallery div
 }
 
 function setSelectedPhoto(path, ind) {
