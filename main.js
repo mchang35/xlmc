@@ -187,6 +187,11 @@ function startEndDates(start, end) {
 }
 
 function layoutTrip(trip, ind) {
+    console.log("ind: " + ind);
+    console.log("    trip:");
+    console.log(trip);
+    console.log("    primary photo:" + trip.primary_photo);
+
     // create a div for the trip == make it a grid
     let tripDiv = document.createElement("div");
     tripDiv.classList.add("trip");
@@ -200,7 +205,10 @@ function layoutTrip(trip, ind) {
     row1.appendChild(row1col);
     let photo = document.createElement("img");
     photo.onclick = function() {clickTrip(trip.name)};
-    photo.src = PHOTO_DIR + trip.primary_photo;
+    photo.setAttribute("src", PHOTO_DIR + trip.primary_photo);
+    photo.setAttribute("alt", PHOTOS[trip.primary_photo]);
+    // photo.src = PHOTO_DIR + trip.primary_photo;
+    // photo.alt = PHOTOS[trip.primary_photo];
     row1col.appendChild(photo);
 
     // row 2
@@ -219,7 +227,7 @@ function layoutTrip(trip, ind) {
     let row2col2 = document.createElement("div");
     row2col2.classList.add("col-9");
     row2.appendChild(row2col2);
-    let title = document.createElement("p");
+    let title = document.createElement("a");
     title.setAttribute('id','title');
     title.style.textAlign = "right";
     title.innerHTML = "Trip #" + (ind + 1).toString() + ": " + trip.name;
@@ -236,10 +244,14 @@ function layoutTrip(trip, ind) {
 }
 
 function layoutOurTrips() {
+    console.log("we are laying out trips");
+
     let container = document.getElementById("ourtrips");
     // TRIPS = await openJSON('trips.json');
 
     let trips = Object.keys(TRIPS);
+    console.log("Trips: ");
+    console.log(trips);
 
     let ind = 0;
     let row;
@@ -430,10 +442,8 @@ async function loadPhotoGallery(photoPaths=null) {
     let paths;
 
     if (photoPaths) {
-        console.log("photoPaths is null");
         paths = photoPaths;
     } else {
-        console.log("photoPaths is not null");
         paths = Object.keys(PHOTOS);
 
         // trying the directory version

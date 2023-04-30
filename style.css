@@ -122,6 +122,10 @@ button:hover {
     max-height: 100%;
 }
 
+.trip img:hover {
+  cursor: pointer;
+}
+
 .trip button {
     margin: 10px;
 }
@@ -133,6 +137,7 @@ button:hover {
 
 .trip #title:hover {
   color: pink;
+  cursor: pointer;
 }
 
 .tripstotake-container {
